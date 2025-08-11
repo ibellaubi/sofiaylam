@@ -1,222 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sofía y Lam - Un viaje transformador de sanación y conexión</title>
-  <meta name="description" content="Descubre 'Sofía y Lam', un libro que combina espiritualidad, sanación emocional y crecimiento personal. Ideal para quienes buscan transformar su vida desde el corazón.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Libros – Sofía y Lam</title>
+  <meta name="description" content="Libros y cuentos para cultivar la autoestima y gestionar el rechazo. Descubre ‘Sofía y Lam’ de Ingrid Bellaubí." />
+
+  <!-- OG / Twitter -->
+  <meta property="og:title" content="Libros – Sofía y Lam" />
+  <meta property="og:description" content="Cuentos que te ayudan a hablar de emociones en familia y en el aula." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://i.imgur.com/Yq7BAaj.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    /* Reset y fuentes */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.7;
-      color: #333;
-      background-color: #f9f8f6;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    /* Cabecera */
-    header {
-      background: #4a6b94;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.2rem;
-      font-weight: 600;
-    }
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-    /* Sección principal */
-    .hero {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-      padding: 60px 0;
-      background: #fff;
-    }
-    .hero-content {
-      flex: 1;
-      min-width: 300px;
-    }
-    .hero-image {
-      flex: 1;
-      min-width: 300px;
-      text-align: center;
-    }
-    .hero-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    .hero h2 {
-      font-size: 2rem;
-      color: #2c3e50;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-      color: #444;
-    }
-    .btn {
-      display: inline-block;
-      background: #e74c3c;
-      color: white;
-      padding: 14px 30px;
-      margin-top: 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1rem;
-      transition: background 0.3s ease;
-      box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
-    }
-    .btn:hover {
-      background: #c0392b;
-      transform: translateY(-2px);
-    }
-    /* Sección de beneficios */
-    .benefits {
-      padding: 60px 0;
-      background: #f1f4f7;
-      text-align: center;
-    }
-    .benefits h2 {
-      font-size: 2rem;
-      color: #2c3e50;
-      margin-bottom: 40px;
-    }
-    .benefits-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .benefit {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      width: 300px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
-    .benefit h3 {
-      color: #4a6b94;
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-    }
-    /* Testimonios */
-    .testimonials {
-      padding: 60px 0;
-      background: #fff;
-      text-align: center;
-    }
-    .testimonial {
-      max-width: 600px;
-      margin: 30px auto;
-      padding: 20px;
-      background: #f9f9f9;
-      border-left: 4px solid #e74c3c;
-      font-style: italic;
-      color: #555;
-    }
-    .testimonial strong {
-      display: block;
-      margin-top: 10px;
-      color: #2c3e50;
-      font-weight: 600;
-    }
-    /* Footer */
-    footer {
-      background: #2c3e50;
-      color: #ecf0f1;
-      text-align: center;
-      padding: 30px 0;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #3498db;
-      text-decoration: none;
-    }
+    body {font-family: 'Poppins', sans-serif; margin:0; color:#222; background:#fff; line-height:1.6}
+    header, footer {background:#fafafa; border-bottom:1px solid #eee}
+    .container {max-width:1100px; margin:auto; padding:0 20px}
+    .topbar {display:flex; justify-content:space-between; align-items:center; padding:15px 0}
+    nav a {margin:0 10px; text-decoration:none; color:#333; font-weight:500}
+    nav a:hover {color:#e9466b}
+    .hero {padding:40px 0; text-align:center; background:#fdf3f5}
+    .hero h1 {font-size:2.2rem; margin-bottom:10px; color:#e9466b}
+    .hero p.author {color:#666; font-size:0.95rem; margin-top:5px}
+    .chip {display:inline-block; padding:6px 14px; margin:4px; border:1px solid #ddd; border-radius:50px; font-size:0.85rem; background:#fff}
+    .highlight {display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:40px 0; align-items:center}
+    .highlight img {width:100%; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+    .kicker {color:#888; font-size:0.9rem; text-transform:uppercase}
+    .note {margin:15px 0}
+    .btn {display:inline-block; padding:10px 18px; margin:5px; background:#e9466b; color:#fff; border-radius:6px; text-decoration:none; font-weight:600}
+    .btn.secondary {background:#333}
+    .btn.ghost {background:none; border:1px solid #ccc; color:#333}
+    .split {display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:40px 0; align-items:start}
+    .card {background:#fff; border:1px solid #eee; border-radius:8px; overflow:hidden; box-shadow:0 4px 8px rgba(0,0,0,0.05)}
+    #autora {margin:60px 0; display:grid; grid-template-columns:1fr 2fr; gap:20px; align-items:center}
+    #autora img {width:100%; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+    #autora h3 {margin-top:0; color:#e9466b}
+    .social {margin-top:10px}
+    .social a {margin-right:10px; color:#e9466b; font-weight:500; text-decoration:none}
+    footer {border-top:1px solid #eee; padding:20px 0; font-size:0.9rem; color:#666; text-align:center}
+    @media(max-width:768px) {.highlight, .split, #autora {grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <!-- Cabecera -->
   <header>
-    <div class="container">
-      <h1>Sofía y Lam</h1>
-      <p>Un viaje de sanación, conexión y despertar espiritual</p>
+    <div class="container topbar">
+      <div class="brand"><strong>Sofía y Lam</strong></div>
+      <nav>
+        <a href="#libros">Libros</a>
+        <a href="#sobrelibro">Sobre el cuento</a>
+        <a href="#autora">Autora</a>
+        <a href="#faq">FAQ</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Sección principal -->
-  <section class="hero container">
-    <div class="hero-content">
-      <h2>Transforma tu vida desde el corazón</h2>
-      <p><strong>"Sofía y Lam"</strong> es un libro profundamente humano y espiritual escrito por <strong>Ingrid Bellaubí</strong>, una reconocida sanadora y guía espiritual. A través de una historia simbólica y conmovedora, descubrirás cómo sanar heridas emocionales, reconectar con tu esencia y abrirte a una vida más plena.</p>
-      <p>Ideal para quienes buscan sanación, crecimiento personal y una conexión más profunda con el alma.</p>
-      <a href="https://www.casadellibro.com/libro-sofia-y-lam/9788410372443/16554771" class="btn" target="_blank">Comprar ahora en Casa del Libro</a>
-    </div>
-    <div class="hero-image">
-      <img src="https://image.casadellibro.com/imagenlibros/9788410372443.jpg" alt="Portada del libro Sofía y Lam - Ingrid Bellaubí">
-    </div>
-  </section>
-
-  <!-- Beneficios -->
-  <section class="benefits">
+  <section class="hero">
     <div class="container">
-      <h2>¿Por qué leer este libro?</h2>
-      <div class="benefits-grid">
-        <div class="benefit">
-          <h3>Sanación emocional</h3>
-          <p>Descubre herramientas para sanar traumas, miedos y patrones repetitivos desde una perspectiva amorosa y espiritual.</p>
-        </div>
-        <div class="benefit">
-          <h3>Conexión con el alma</h3>
-          <p>Reconecta con tu verdadero ser y aprende a escuchar la voz interior que guía tu camino.</p>
-        </div>
-        <div class="benefit">
-          <h3>Transformación personal</h3>
-          <p>Una historia que inspira el cambio profundo y el despertar de la conciencia.</p>
-        </div>
+      <h1>Libros que te pueden ayudar</h1>
+      <p class="author">Por Ingrid Bellaubí, autora y educadora emocional</p>
+      <p>Cuentos y recursos para trabajar el rechazo, la seguridad y el amor propio en familia y en el aula.</p>
+      <div>
+        <span class="chip">Compra segura en <strong>Casa del Libro</strong></span>
+        <span class="chip">A partir de 5 años</span>
+        <span class="chip">Lecturas conscientes</span>
       </div>
     </div>
   </section>
 
-  <!-- Testimonios -->
-  <section class="testimonials">
-    <div class="container">
-      <h2>Lo que dicen quienes lo han leído</h2>
-      <div class="testimonial">
-        "Este libro llegó a mi vida en el momento exacto. Me ayudó a sanar heridas que ni siquiera sabía que tenía."
-        <strong>— Marta R., lectora espiritual</strong>
+  <main id="libros" class="container">
+    <div class="highlight">
+      <div class="left">
+        <img src="https://i.imgur.com/Yq7BAaj.jpg" alt="Portada del libro Sofía y Lam" />
       </div>
-      <div class="testimonial">
-        "Una historia simple pero profundamente transformadora. Lo recomiendo a todos los que buscan sentido y paz interior."
-        <strong>— Daniel M., terapeuta holístico</strong>
+      <div class="right">
+        <div class="kicker">Cuento ilustrado • Autoestima y pertenencia</div>
+        <h2>Sofía y Lam</h2>
+        <p class="note">Sofía descubre, junto a Lam —un espíritu de loto—, herramientas sencillas para sanar el rechazo y recordarse: <em>«Estoy segura y merezco amor»</em>.</p>
+        <a class="btn" href="https://www.casadellibro.com/libro-sofia-y-lam/9788410372443/16554771" target="_blank" rel="noopener nofollow">Tapa dura – ¡Lo quiero!</a>
+        <a class="btn secondary" href="https://www.casadellibro.com/libro-sofia-y-lam/9791387817046/17147329" target="_blank" rel="noopener nofollow">Tapa blanda – ¡Lo quiero!</a>
+        <a class="btn ghost" href="#sobrelibro">Ver interior</a>
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
+    <section id="sobrelibro" class="split">
+      <div>
+        <h3>¿De qué va?</h3>
+        <p>En un pueblo de montaña, Sofía aprende a transformar el rechazo en seguridad interior junto a Lam, un espíritu de loto que le muestra la luz del chakra raíz. Incluye afirmaciones y respiraciones para practicar en casa o en el aula.</p>
+        <ul>
+          <li>Edad recomendada: 5–9 años (lectura acompañada)</li>
+          <li>Temas: rechazo, autoestima, pertenencia, calma</li>
+          <li>Formatos: tapa dura y tapa blanda</li>
+        </ul>
+      </div>
+      <div>
+        <div class="card">
+          <div style="position:relative;width:100%;aspect-ratio:16/9">
+            <iframe src="https://www.youtube-nocookie.com/embed/hiv7m5YhTyg" title="Sofía y Lam – Video" frameborder="0" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%"></iframe>
+          </div>
+          <div style="padding:10px;color:#4a4a66;font-size:.9rem">Si no ves el video, <a href="https://www.youtube.com/watch?v=hiv7m5YhTyg" target="_blank" rel="noopener">ábrelo en YouTube</a>.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="autora" class="container">
+      <img src="https://i.imgur.com/2NcyMwQ.jpg" alt="Retrato de Ingrid Bellaubí" />
+      <div>
+        <h3>Sobre la autora</h3>
+        <p><strong>Ingrid Bellaubí</strong> es una autora y educadora comprometida con el bienestar emocional de los niños y niñas. Su trabajo se centra en ofrecer herramientas prácticas que fomenten la autoestima, la resiliencia y la gestión emocional desde edades tempranas. Inspirada por su experiencia en el ámbito educativo y su sensibilidad hacia las necesidades emocionales de la infancia, Ingrid crea cuentos que no solo entretienen, sino que también enseñan y acompañan.</p>
+        <p>Con <em>Sofía y Lam</em>, Ingrid invita a las familias y docentes a explorar juntos la importancia de aceptarse a uno mismo y de cultivar la seguridad interior.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/bellaubina" target="_blank" rel="noopener">Instagram @bellaubina</a>
+          <a href="mailto:ingridbellaubi@gmail.com">Email</a>
+          <a href="#">Más libros</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
     <div class="container">
-      <p>© 2025 Promoción de <em>Sofía y Lam</em> por Ingrid Bellaubí. Todos los derechos reservados.</p>
-      <p>Libro disponible en <a href="https://www.casadellibro.com/libro-sofia-y-lam/9788410372443/16554771" target="_blank">Casa del Libro</a></p>
+      © <span id="y"></span> Ingrid Bellaubí • <a href="#">Privacidad</a> • <a href="#">Contacto</a>
     </div>
   </footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
