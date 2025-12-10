@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
   <title>Cuentos para Sanar – Ingrid Bellaubí</title>
-  <meta name="description" content="Descubre los libros de Ingrid Bellaubí: 'Sofía y Lam' y 'Ariadna y el hilo dorado'. Cuentos para fortalecer la autoestima y sanar emociones en los niños.">
-  <meta name="keywords" content="libro infantil, autoestima niños, cuentos emocionales, Sofía y Lam, Ariadna y el hilo dorado, Ingrid Bellaubí">
+  <meta name="description" content="Descubre los libros de Ingrid Bellaubí: 'Sofía y Lam', 'Ariadna y el hilo dorado' y 'Leo i Vam'. Cuentos para fortalecer la autoestima y sanar emociones.">
+  <meta name="keywords" content="libro infantil, autoestima niños, cuentos emocionales, Sofía y Lam, Ariadna, Leo i Vam, Ingrid Bellaubí">
   
   <meta property="og:type" content="book">
   <meta property="og:title" content="Cuentos que sanan el corazón - Ingrid Bellaubí">
@@ -20,10 +20,19 @@
   <style>
     /* --- VARIABLES & RESET --- */
     :root {
-      --primary: #e74c3c;        /* Vermell Sofía */
+      /* Sofía */
+      --primary: #e74c3c;
       --primary-dark: #c0392b;
-      --gold: #f39c12;           /* Daurat Ariadna */
+      
+      /* Ariadna */
+      --gold: #f39c12;
       --gold-dark: #d35400;
+      
+      /* Leo i Vam (Colors de Tardor) */
+      --autumn: #e67e22;      /* Taronja Carbassa */
+      --autumn-bg: #fff8f0;   /* Fons crema suau */
+      --forest: #27ae60;      /* Verd bosc per botons */
+
       --text: #4a4a4a;
       --bg-soft: #fff5f5;
       --white: #ffffff;
@@ -74,8 +83,11 @@
     .wave-divider .shape-fill { fill: var(--bg-soft); }
     .wave-top { transform: rotate(0deg); top: -1px; bottom: auto; }
     
-    /* Ona específica per a la secció daurada */
+    /* Ona específica per a la secció daurada (Ariadna) */
     .wave-gold .shape-fill { fill: #fffbf0; }
+    
+    /* Ona específica per a la secció tardor (Leo) */
+    .wave-autumn .shape-fill { fill: var(--autumn-bg); }
 
     /* --- HEADER --- */
     header {
@@ -95,6 +107,7 @@
       font-size: 1.3rem;
       color: #fff;
       font-weight: 500;
+      margin-bottom: 20px;
     }
 
     /* --- SECCIÓ PRINCIPAL (Sofía) --- */
@@ -125,6 +138,7 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       background: var(--primary);
       color: white;
@@ -140,14 +154,19 @@
       transform: translateY(-3px);
     }
 
-    /* Botó Amazon (Específic) */
+    /* Botó Amazon (Taronja) */
     .btn-amazon {
       background: #ff9900; 
       box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
     }
-    .btn-amazon:hover {
-      background: #e68a00;
+    .btn-amazon:hover { background: #e68a00; }
+
+    /* Botó Leo (Verd Bosc) */
+    .btn-leo {
+      background: var(--forest);
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
     }
+    .btn-leo:hover { background: #1e8449; }
 
     /* --- AUTORA --- */
     .author-section {
@@ -181,7 +200,7 @@
       border-top: 5px solid var(--primary);
     }
 
-    /* --- NOVA SECCIÓ: ARIADNA (Daurada) --- */
+    /* --- SECCIÓ ARIADNA (Daurada) --- */
     .golden-section {
       background: linear-gradient(135deg, #fffbf0 0%, #fff3cd 100%);
       padding: 80px 0;
@@ -189,15 +208,15 @@
       margin-top: 50px;
       border-top: 1px solid #ffeeba;
     }
-    .golden-content-wrapper {
+    .section-content-wrapper {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 50px;
     }
-    /* Invertim l'ordre en escriptori per varietat visual */
-    .golden-content-wrapper .hero-image { order: 1; }
-    .golden-content-wrapper .hero-content { order: 2; }
+    /* Imatge esquerra en PC */
+    .section-content-wrapper .hero-image { order: 1; }
+    .section-content-wrapper .hero-content { order: 2; }
     
     .golden-badge {
       background: var(--gold);
@@ -217,6 +236,29 @@
     }
     .feature-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
     .feature-list i { color: var(--gold); }
+
+    /* --- NOVA SECCIÓ: LEO I VAM (Tardor) --- */
+    .autumn-section {
+      background: var(--autumn-bg);
+      padding: 80px 0;
+      position: relative;
+    }
+    /* Invertim l'ordre per a Leo: Text esquerra, Imatge dreta */
+    .autumn-wrapper .hero-content { order: 1; }
+    .autumn-wrapper .hero-image { order: 2; }
+    
+    .autumn-badge {
+      background: var(--autumn);
+      color: #fff;
+      padding: 5px 15px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    .autumn-list i { color: var(--autumn); }
 
     /* --- TESTIMONIOS --- */
     .testimonials {
@@ -245,9 +287,14 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero, .golden-content-wrapper { flex-direction: column; text-align: center; }
-      .golden-content-wrapper .hero-image { order: 1; } /* Imatge primer en mòbil */
-      .golden-content-wrapper .hero-content { order: 2; }
+      .hero, .section-content-wrapper, .autumn-wrapper { flex-direction: column; text-align: center; }
+      
+      /* En mòbil sempre imatge primer */
+      .section-content-wrapper .hero-image,
+      .autumn-wrapper .hero-image { order: 1; }
+      .section-content-wrapper .hero-content,
+      .autumn-wrapper .hero-content { order: 2; }
+
       .feature-list { display: inline-block; text-align: left; }
     }
   </style>
@@ -334,16 +381,16 @@
        </svg>
     </div>
 
-    <div class="container golden-content-wrapper">
+    <div class="container section-content-wrapper">
       <div class="hero-image">
         <img src="https://m.media-amazon.com/images/I/71+0q+D-R+L._SY466_.jpg" alt="Portada Ariadna y el hilo dorado" style="border: 4px solid #fff; max-width: 300px; box-shadow: 0 15px 30px rgba(241, 196, 15, 0.3);">
       </div>
 
       <div class="hero-content">
-        <span class="golden-badge">✨ Nuevo Lanzamiento</span>
-        <h2 style="color: var(--gold-dark);">Ariadna y el hilo dorado de las emociones</h2>
+        <span class="golden-badge">✨ Colección Emocional</span>
+        <h2 style="color: var(--gold-dark);">Ariadna y el hilo dorado</h2>
         <p style="font-size: 1.1rem; margin-bottom: 15px;"><strong>Un viaje para sanar el abandono y descubrir tu luz.</strong></p>
-        <p>En este nuevo cuento, Ingrid nos invita a seguir un hilo mágico. Es ideal para niños que se sienten solos o necesitan recordar que nunca lo están realmente.</p>
+        <p>En este cuento, Ingrid nos invita a seguir un hilo mágico. Es ideal para niños que se sienten solos o necesitan recordar que nunca lo están realmente.</p>
         
         <ul class="feature-list">
           <li><i class="fas fa-sun"></i> Descubrir la propia luz interior.</li>
@@ -354,6 +401,37 @@
         <a href="https://www.amazon.es/dp/B0G62V5DNX?ref=ppx_yo2ov_dt_b_fed_asin_title" class="btn btn-amazon" target="_blank" rel="noopener">
           <i class="fab fa-amazon"></i> Comprar ahora en Amazon
         </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="autumn-section">
+    <div class="wave-divider wave-top wave-autumn">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+           <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#fff5f5"></path>
+       </svg>
+    </div>
+
+    <div class="container section-content-wrapper autumn-wrapper">
+      <div class="hero-content">
+        <span class="autumn-badge">🍂 Volumen 2 • Estilo Manga</span>
+        <h2 style="color: #d35400;">Leo i Vam</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 15px;"><strong>Amistad, naturaleza y la magia de crecer.</strong></p>
+        <p>Leo y Vam regresan en una aventura otoñal llena de color. Un cuento ilustrado con estética manga que celebra la conexión con la naturaleza y la belleza de compartir momentos con quienes queremos.</p>
+        
+        <ul class="feature-list autumn-list">
+          <li><i class="fas fa-leaf"></i> Conexión con la naturaleza y el entorno.</li>
+          <li><i class="fas fa-user-friends"></i> El valor de la amistad verdadera.</li>
+          <li><i class="fas fa-paint-brush"></i> Ilustraciones vibrantes estilo manga.</li>
+        </ul>
+        
+        <a href="#" class="btn btn-leo" target="_blank" rel="noopener">
+          <i class="fas fa-shopping-basket"></i> Ver detalles
+        </a>
+      </div>
+
+      <div class="hero-image">
+        <img src="leo-i-vam-2.jpg" alt="Portada de Leo i Vam Volumen 2" style="border: 4px solid #fff; max-width: 300px; box-shadow: 0 15px 30px rgba(230, 126, 34, 0.3);">
       </div>
     </div>
   </section>
@@ -374,7 +452,7 @@
         <div class="stars">
           <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
-        <p><em>"Ingrid tiene un don para tocar el corazón de los niños. Estamos deseando leer el nuevo libro de Ariadna."</em></p>
+        <p><em>"Ingrid tiene un don para tocar el corazón de los niños. Estamos deseando leer las nuevas aventuras."</em></p>
         <strong style="display:block; margin-top:10px; color:var(--primary);">— David L., Educador Infantil</strong>
       </div>
     </div>
@@ -385,8 +463,9 @@
       <h2>Regala raíces y alas a tu hijo</h2>
       <p style="margin-bottom: 30px;">La infancia es el momento de sembrar la confianza.</p>
       <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-        <a href="https://www.casadellibro.com/libro-sofia-y-lam/9788410372443/16554771" class="btn" target="_blank">Ver Sofía y Lam</a>
-        <a href="https://www.amazon.es/dp/B0G62V5DNX?ref=ppx_yo2ov_dt_b_fed_asin_title" class="btn btn-amazon" target="_blank">Ver Ariadna</a>
+        <a href="https://www.casadellibro.com/libro-sofia-y-lam/9788410372443/16554771" class="btn" target="_blank">Sofía y Lam</a>
+        <a href="https://www.amazon.es/dp/B0G62V5DNX?ref=ppx_yo2ov_dt_b_fed_asin_title" class="btn btn-amazon" target="_blank">Ariadna</a>
+        <a href="#" class="btn btn-leo" target="_blank">Leo i Vam</a>
       </div>
     </div>
   </div>
@@ -402,3 +481,5 @@
     </div>
   </footer>
 
+</body>
+</html>
