@@ -1,3 +1,8 @@
+Aquí tienes el código actualizado. He añadido un **botón extra** en la sección de "Sofía y Lam" para la versión de **Tapa Blanda**.
+
+He creado un pequeño grupo de botones para que se vean ordenados (uno al lado del otro en PC, y se ajusten bien en móvil). También he diferenciado visualmente los botones (uno relleno y otro con borde) para que quede elegante.
+
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -78,14 +83,13 @@
       display: flex;
       align-items: center;
       gap: 70px;
-      margin-bottom: 120px; /* Espacio generoso entre libros */
+      margin-bottom: 120px;
       background: white;
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Tarjeta sutil */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
-    /* Alternar orden imagen/texto */
     .book-section:nth-child(even) {
       flex-direction: row-reverse;
     }
@@ -101,7 +105,6 @@
       width: 300px; 
       height: auto;
       border-radius: 12px;
-      /* Sombra realista de libro */
       box-shadow: 5px 5px 15px rgba(0,0,0,0.15), 
                   10px 10px 25px rgba(0,0,0,0.1); 
       transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -147,29 +150,52 @@
     }
 
     /* --- BOTONES --- */
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 14px 35px;
+      gap: 8px;
+      padding: 12px 25px;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 2px solid transparent;
     }
 
+    /* Botones Sofía */
     .btn-sofia {
       background-color: var(--primary);
       color: white;
+      border-color: var(--primary);
     }
     .btn-sofia:hover {
       background-color: #c0392b;
+      border-color: #c0392b;
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
     }
 
+    /* Estilo "Outline" (Borde) para Tapa Blanda */
+    .btn-sofia-outline {
+      background-color: white;
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .btn-sofia-outline:hover {
+      background-color: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Botones Leo */
     .btn-leo {
       background-color: var(--secondary);
       color: white;
@@ -210,6 +236,10 @@
       header h1 { font-size: 2.2rem; }
       .book-image img { width: 240px; }
       .book-info h2 { font-size: 2rem; }
+      
+      .btn-group {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -235,9 +265,16 @@
         </p>
         <span class="highlight">Ideal para trabajar el miedo y la confianza en casa o en el aula.</span>
         
-        <a href="https://www.casadellibro.com/libro-sofia-y-lam/9788410372443/16554771" class="btn btn-sofia" target="_blank">
-          <i class="fas fa-book-open"></i> Comprar Libro
-        </a>
+        <div class="btn-group">
+          <a href="https://www.casadellibro.com/libro-sofia-y-lam/9788410372443/16554771" class="btn btn-sofia" target="_blank">
+            <i class="fas fa-book"></i> Tapa Dura
+          </a>
+          
+          <a href="https://www.casadellibro.com/libro-sofia-y-lam/9791387817046/17147329" class="btn btn-sofia-outline" target="_blank">
+            <i class="fas fa-book-open"></i> Tapa Blanda
+          </a>
+        </div>
+
       </div>
     </article>
 
@@ -272,3 +309,4 @@
 
 </body>
 </html>
+```
