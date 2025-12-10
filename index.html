@@ -1,173 +1,485 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Libros – Sofía y Lam</title>
-<meta content="Libros y cuentos para cultivar la autoestima y gestionar el rechazo. Descubre ‘Sofía y Lam’ de Ingrid Bellaubí." name="description"/>
-<!-- OG / Twitter -->
-<meta content="Libros – Sofía y Lam" property="og:title"/>
-<meta content="Cuentos que te ayudan a hablar de emociones en familia y en el aula." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="https://i.imgur.com/Yq7BAaj.jpg" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<!-- Font -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet"/>
-<style>
-    body {font-family: 'Poppins', sans-serif; margin:0; color:#222; background:#fff; line-height:1.6}
-    header, footer {background:#fafafa; border-bottom:1px solid #eee}
-    .container {max-width:1100px; margin:auto; padding:0 20px}
-    .topbar {display:flex; justify-content:space-between; align-items:center; padding:15px 0}
-    nav a {margin:0 10px; text-decoration:none; color:#333; font-weight:500}
-    nav a:hover {color:#e9466b}
-    .hero {padding:40px 0; text-align:center; background:#fdf3f5}
-    .hero h1 {font-size:2.2rem; margin-bottom:10px; color:#e9466b}
-    .hero p.author {color:#666; font-size:0.95rem; margin-top:5px}
-    .chip {display:inline-block; padding:6px 14px; margin:4px; border:1px solid #ddd; border-radius:50px; font-size:0.85rem; background:#fff}
-    .highlight {display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:40px 0; align-items:center}
-    .highlight img {width:100%; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1)}
-    .kicker {color:#888; font-size:0.9rem; text-transform:uppercase}
-    .note {margin:15px 0}
-    .btn {display:inline-block; padding:10px 18px; margin:5px; background:#e9466b; color:#fff; border-radius:6px; text-decoration:none; font-weight:600}
-    .btn.secondary {background:#333}
-    .btn.ghost {background:none; border:1px solid #ccc; color:#333}
-    .split {display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:40px 0; align-items:start}
-    .card {background:#fff; border:1px solid #eee; border-radius:8px; overflow:hidden; box-shadow:0 4px 8px rgba(0,0,0,0.05)}
-    #autora {margin:60px 0; display:grid; grid-template-columns:1fr 2fr; gap:20px; align-items:center}
-    #autora img {width:100%; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.1)}
-    #autora h3 {margin-top:0; color:#e9466b}
-    .social {margin-top:10px}
-    .social a {margin-right:10px; color:#e9466b; font-weight:500; text-decoration:none}
-    footer {border-top:1px solid #eee; padding:20px 0; font-size:0.9rem; color:#666; text-align:center}
-    @media(max-width:768px) {.highlight, .split, #autora {grid-template-columns:1fr}}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>Cuentos para Sanar – Ingrid Bellaubí</title>
+  <meta name="description" content="Descubre los libros de Ingrid Bellaubí: 'Sofía y Lam', 'Ariadna y el hilo dorado' y 'Leo i Vam'. Cuentos para fortalecer la autoestima y sanar emociones.">
+  <meta name="keywords" content="libro infantil, autoestima niños, cuentos emocionales, Sofía y Lam, Ariadna, Leo i Vam, Ingrid Bellaubí">
+  
+  <meta property="og:type" content="book">
+  <meta property="og:title" content="Cuentos que sanan el corazón - Ingrid Bellaubí">
+  <meta property="og:image" content="https://i.imgur.com/Yq7BAaj.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* --- VARIABLES & RESET --- */
+    :root {
+      /* Sofía */
+      --primary: #e74c3c;
+      --primary-dark: #c0392b;
+      
+      /* Ariadna */
+      --gold: #f39c12;
+      --gold-dark: #d35400;
+      
+      /* Leo i Vam (Colors de Tardor) */
+      --autumn: #e67e22;      /* Taronja Carbassa */
+      --autumn-bg: #fff8f0;   /* Fons crema suau */
+      --forest: #27ae60;      /* Verd bosc per botons */
+
+      --text: #4a4a4a;
+      --bg-soft: #fff5f5;
+      --white: #ffffff;
+      --gradient: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      line-height: 1.8;
+      color: var(--text);
+      background-color: var(--bg-soft);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* --- UTILIDADES VISUALES (ONAS) --- */
+    .wave-divider {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+    .wave-divider svg {
+      position: relative;
+      display: block;
+      width: calc(138% + 1.3px);
+      height: 60px;
+    }
+    .wave-divider .shape-fill { fill: var(--bg-soft); }
+    .wave-top { transform: rotate(0deg); top: -1px; bottom: auto; }
+    
+    /* Ona específica per a la secció daurada (Ariadna) */
+    .wave-gold .shape-fill { fill: #fffbf0; }
+    
+    /* Ona específica per a la secció tardor (Leo) */
+    .wave-autumn .shape-fill { fill: var(--autumn-bg); }
+
+    /* --- HEADER --- */
+    header {
+      background: var(--gradient);
+      color: var(--primary-dark);
+      padding: 60px 0 100px;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      color: #fff;
+      text-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.3rem;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    /* --- SECCIÓ PRINCIPAL (Sofía) --- */
+    .hero {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 50px;
+      margin-top: -60px;
+      margin-bottom: 60px;
+      gap: 40px;
+    }
+    .hero-content { flex: 1; min-width: 300px; }
+    .hero-image { flex: 1; min-width: 280px; text-align: center; }
+    
+    .hero-image img {
+      max-width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    .hero-image img:hover { transform: scale(1.02); }
+
+    /* --- BOTONES --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--primary);
+      color: white;
+      padding: 15px 30px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+    }
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+    }
+
+    /* Botó Amazon (Taronja) */
+    .btn-amazon {
+      background: #ff9900; 
+      box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
+    }
+    .btn-amazon:hover { background: #e68a00; }
+
+    /* Botó Leo (Verd Bosc) */
+    .btn-leo {
+      background: var(--forest);
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+    }
+    .btn-leo:hover { background: #1e8449; }
+
+    /* --- AUTORA --- */
+    .author-section {
+      padding: 80px 0;
+      background: white;
+      text-align: center;
+      position: relative;
+    }
+    .author-img-wrapper img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      object-fit: cover;
+    }
+
+    /* --- BENEFICIOS --- */
+    .benefits { padding: 60px 0; text-align: center; }
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .benefit-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-top: 5px solid var(--primary);
+    }
+
+    /* --- SECCIÓ ARIADNA (Daurada) --- */
+    .golden-section {
+      background: linear-gradient(135deg, #fffbf0 0%, #fff3cd 100%);
+      padding: 80px 0;
+      position: relative;
+      margin-top: 50px;
+      border-top: 1px solid #ffeeba;
+    }
+    .section-content-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 50px;
+    }
+    /* Imatge esquerra en PC */
+    .section-content-wrapper .hero-image { order: 1; }
+    .section-content-wrapper .hero-content { order: 2; }
+    
+    .golden-badge {
+      background: var(--gold);
+      color: #fff;
+      padding: 5px 15px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    .feature-list {
+      list-style: none;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .feature-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .feature-list i { color: var(--gold); }
+
+    /* --- NOVA SECCIÓ: LEO I VAM (Tardor) --- */
+    .autumn-section {
+      background: var(--autumn-bg);
+      padding: 80px 0;
+      position: relative;
+    }
+    /* Invertim l'ordre per a Leo: Text esquerra, Imatge dreta */
+    .autumn-wrapper .hero-content { order: 1; }
+    .autumn-wrapper .hero-image { order: 2; }
+    
+    .autumn-badge {
+      background: var(--autumn);
+      color: #fff;
+      padding: 5px 15px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+    .autumn-list i { color: var(--autumn); }
+
+    /* --- TESTIMONIOS --- */
+    .testimonials {
+      background: var(--gradient);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.95);
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 30px;
+      border-radius: 15px;
+    }
+    .stars { color: var(--gold); margin-bottom: 10px; }
+
+    /* --- FOOTER --- */
+    footer {
+      background: #333;
+      color: #ccc;
+      text-align: center;
+      padding: 40px 0;
+      font-size: 0.9rem;
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero, .section-content-wrapper, .autumn-wrapper { flex-direction: column; text-align: center; }
+      
+      /* En mòbil sempre imatge primer */
+      .section-content-wrapper .hero-image,
+      .autumn-wrapper .hero-image { order: 1; }
+      .section-content-wrapper .hero-content,
+      .autumn-wrapper .hero-content { order: 2; }
+
+      .feature-list { display: inline-block; text-align: left; }
+    }
   </style>
 </head>
 <body>
-<header>
-<div class="container topbar">
-<div class="brand"><strong>Sofía y Lam</strong></div>
-<nav>
-<a href="#libros">Libros</a>
-<a href="#sobrelibro">Sobre el cuento</a>
-<a href="#autora">Autora</a>
-<a href="#faq">FAQ</a>
-</nav>
-</div>
-</header>
-<section class="hero">
-<div class="container">
 
-<h1 id="rotating-title">Empieza a meditar desde la infancia con Sofía y Lam</h1>
+  <header>
+    <div class="container">
+      <h1>Cuentos para Sanar</h1>
+      <p>Un viaje mágico hacia la autoestima y la seguridad emocional</p>
+    </div>
+    <div class="wave-divider">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+  </header>
 
-<p class="author">Por Ingrid Bellaubí, autora y educadora emocional</p>
-<p>Cuentos y recursos para trabajar el rechazo, la seguridad y el amor propio en familia y en el aula.</p>
-<div>
-<span class="chip">Compra segura en <strong>Casa del Libro</strong></span>
-<span class="chip">A partir de 5 años</span>
-<span class="chip">Lecturas conscientes</span>
-</div>
-</div>
-</section>
-<main class="container" id="libros">
-<div class="highlight">
-<div class="left">
-<img alt="Portada del libro Sofía y Lam" src="https://i.imgur.com/Yq7BAaj.jpg"/>
-</div>
-<div class="right">
-<div class="kicker">Cuento ilustrado • Autoestima y pertenencia</div>
-<h2>Sofía y Lam</h2>
-<p class="note">Sofía descubre, junto a Lam —un espíritu de loto—, herramientas sencillas para sanar el rechazo y recordarse: <em>«Estoy segura y merezco amor»</em>.</p>
-<a class="btn" href="https://www.casadellibro.com/libro-sofia-y-lam/9788410372443/16554771" rel="noopener nofollow" target="_blank">Tapa dura – ¡Lo quiero!</a>
-<a class="btn secondary" href="https://www.casadellibro.com/libro-sofia-y-lam/9791387817046/17147329" rel="noopener nofollow" target="_blank">Tapa blanda – ¡Lo quiero!</a>
-<a class="btn" href="https://www.amazon.es/Sof%C3%ADa-y-Lam-Ingrid-Bellaub%C3%AD-ebook/dp/B0DP3YLSJN" rel="noopener nofollow" style="background:#00A859" target="_blank">eBook Kindle – ¡Lo quiero!</a>
-<a class="btn ghost" href="#sobrelibro">Ver interior</a>
-</div>
-</div>
-<section class="split" id="sobrelibro">
-<div>
-<h3>¿De qué va?</h3>
-<p>En un pueblo de montaña, Sofía aprende a transformar el rechazo en seguridad interior junto a Lam, un espíritu de loto que le muestra la luz del chakra raíz. Incluye afirmaciones y respiraciones para practicar en casa o en el aula.</p>
-<ul>
-<li>Edad recomendada: 5–9 años (lectura acompañada)</li>
-<li>Temas: rechazo, autoestima, pertenencia, calma</li>
-<li>Formatos: tapa dura y tapa blanda</li>
-</ul>
-</div>
-<div>
-<div class="card">
-<div style="position:relative;width:100%;aspect-ratio:16/9">
-<iframe allowfullscreen="" frameborder="0" src="https://www.youtube-nocookie.com/embed/hiv7m5YhTyg" style="position:absolute;inset:0;width:100%;height:100%" title="Sofía y Lam – Video"></iframe>
-</div>
-<div style="padding:10px;color:#4a4a66;font-size:.9rem">Si no ves el video, <a href="https://www.youtube.com/watch?v=hiv7m5YhTyg" rel="noopener" target="_blank">ábrelo en YouTube</a>.</div>
-</div>
-</div>
-</section>
-<!-- Reseñas -->
-<section class="container" id="resenas" style="margin:40px 0">
-<h3 style="margin:0 0 12px;color:#e9466b">Lo que dicen los lectores</h3>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-<article class="card" style="padding:16px">
-<div style="color:#f5a623;">★★★★★</div>
-<p>“Por fin un cuento que nos ayuda a poner nombre a lo que sienten. Las respiraciones y frases nos han servido mucho en casa.”</p>
-<div style="font-weight:600;margin-top:6px">María G., madre</div>
-</article>
-<article class="card" style="padding:16px">
-<div style="color:#f5a623;">★★★★★</div>
-<p>“Lo he usado en tutoría. Los peques conectaron enseguida con Sofía y practicamos la visualización de la flor roja.”</p>
-<div style="font-weight:600;margin-top:6px">Jordi R., orientador</div>
-</article>
-<article class="card" style="padding:16px">
-<div style="color:#f5a623;">★★★★★</div>
-<p>“Mensaje claro y muy tierno. Ideal para empezar a hablar de rechazo y autoestima sin que se agobien.”</p>
-<div style="font-weight:600;margin-top:6px">Núria P., maestra</div>
-</article>
-</div>
-</section>
-<section class="container" id="autora">
-<img alt="Retrato de Ingrid Bellaubí" src="https://i.imgur.com/2NcyMwQ.jpg"/>
-<div>
-<h3>Sobre la autora</h3>
-<p><strong>Ingrid Bellaubí</strong> es una autora y educadora comprometida con el bienestar emocional de los niños y niñas. Su trabajo se centra en ofrecer herramientas prácticas que fomenten la autoestima, la resiliencia y la gestión emocional desde edades tempranas. Inspirada por su experiencia en el ámbito educativo y su sensibilidad hacia las necesidades emocionales de la infancia, Ingrid crea cuentos que no solo entretienen, sino que también enseñan y acompañan.</p>
-<p>Con <em>Sofía y Lam</em>, Ingrid invita a las familias y docentes a explorar juntos la importancia de aceptarse a uno mismo y de cultivar la seguridad interior.</p>
-<div class="social">
-<a href="https://www.instagram.com/bellaubina" rel="noopener" target="_blank">Instagram @bellaubina</a>
-<a href="mailto:ingridbellaubi@gmail.com">Email</a>
-<a href="#">Más libros</a>
-</div>
-</div>
-</section>
-</main>
-<footer>
-<div class="container">
-      © <span id="y"></span> Ingrid Bellaubí • <a href="#">Privacidad</a> • <a href="#">Contacto</a>
-</div>
-</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <div class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <span style="color:var(--primary); font-weight:bold; letter-spacing:1px; text-transform:uppercase; font-size:0.9rem;">El Primer Libro</span>
+        <h2>Sofía y Lam</h2>
+        <p><strong>¿Tu hijo necesita sentirse más seguro, fuerte y amado?</strong></p>
+        <p>"Sofía y Lam" es una herramienta de sanación. A través de una historia tierna, tu hijo aprenderá a echar raíces emocionales fuertes, superar miedos y cultivar su amor propio.</p>
+        
+        <div style="margin-top: 25px;">
+          <a href="https://www.casadellibro.com/libro-sofia-y-lam/9788410372443/16554771" class="btn" target="_blank" rel="noopener">
+            <i class="fas fa-book-open"></i> Comprar en Casa del Libro
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://i.imgur.com/Yq7BAaj.jpg" alt="Portada del libro Sofía y Lam">
+      </div>
+    </section>
+  </div>
 
-<script>
-const titles = [
-  "Empieza a meditar desde la infancia con Sofía y Lam",
-  "Reconoce y sana las heridas de la infancia",
-  "Herramientas emocionales que tus hijos recordarán siempre"
-];
-let index = 0;
-setInterval(() => {
-  index = (index + 1) % titles.length;
-  const el = document.getElementById('rotating-title');
-  el.style.opacity = 0;
-  setTimeout(() => {
-    el.textContent = titles[index];
-    el.style.opacity = 1;
-  }, 500);
-}, 4000);
-</script>
-<style>
-#rotating-title {
-  transition: opacity 0.5s ease-in-out;
-}
-</style>
+  <section class="author-section">
+    <div class="wave-divider wave-top">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+           <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#fff5f5"></path>
+       </svg>
+    </div>
+
+    <div class="container">
+      <h2>Escrito desde el corazón del mar</h2>
+      <div class="author-img-wrapper" style="margin: 20px 0;">
+        <img src="https://i.imgur.com/2NcyMwQ.jpg" alt="Ingrid Bellaubí">
+      </div>
+      <div style="max-width: 800px; margin: 0 auto;">
+        <p><strong>Íngrid Bellaubí Pallarés</strong>, Capitana de la Marina Mercante, ha aprendido que para navegar tormentas se necesitan raíces fuertes. Sus cuentos nacen de la necesidad de dar a los niños las herramientas emocionales que muchas veces faltan en las escuelas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="container">
+      <h3 style="color:var(--text)">¿Qué aporta "Sofía y Lam"?</h3>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <i class="fas fa-heart" style="font-size:2rem; color:var(--primary); margin-bottom:15px;"></i>
+          <h4>Autoestima Sólida</h4>
+          <p>El niño descubre que es valioso simplemente por ser quien es.</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-anchor" style="font-size:2rem; color:var(--primary); margin-bottom:15px;"></i>
+          <h4>Seguridad Interior</h4>
+          <p>Trabaja el Chakra Raíz para sentirse anclado ante la ansiedad.</p>
+        </div>
+        <div class="benefit-card">
+          <i class="fas fa-shield-alt" style="font-size:2rem; color:var(--primary); margin-bottom:15px;"></i>
+          <h4>Gestión del Miedo</h4>
+          <p>Herramientas suaves para transformar el miedo en fortaleza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="golden-section">
+    <div class="wave-divider wave-top wave-gold">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+           <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+       </svg>
+    </div>
+
+    <div class="container section-content-wrapper">
+      <div class="hero-image">
+        <img src="https://m.media-amazon.com/images/I/71+0q+D-R+L._SY466_.jpg" alt="Portada Ariadna y el hilo dorado" style="border: 4px solid #fff; max-width: 300px; box-shadow: 0 15px 30px rgba(241, 196, 15, 0.3);">
+      </div>
+
+      <div class="hero-content">
+        <span class="golden-badge">✨ Colección Emocional</span>
+        <h2 style="color: var(--gold-dark);">Ariadna y el hilo dorado</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 15px;"><strong>Un viaje para sanar el abandono y descubrir tu luz.</strong></p>
+        <p>En este cuento, Ingrid nos invita a seguir un hilo mágico. Es ideal para niños que se sienten solos o necesitan recordar que nunca lo están realmente.</p>
+        
+        <ul class="feature-list">
+          <li><i class="fas fa-sun"></i> Descubrir la propia luz interior.</li>
+          <li><i class="fas fa-heart-broken"></i> Sanar la herida del abandono.</li>
+          <li><i class="fas fa-link"></i> Conectar con las emociones profundas.</li>
+        </ul>
+        
+        <a href="https://www.amazon.es/dp/B0G62V5DNX?ref=ppx_yo2ov_dt_b_fed_asin_title" class="btn btn-amazon" target="_blank" rel="noopener">
+          <i class="fab fa-amazon"></i> Comprar ahora en Amazon
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="autumn-section">
+    <div class="wave-divider wave-top wave-autumn">
+       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+           <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#fff5f5"></path>
+       </svg>
+    </div>
+
+    <div class="container section-content-wrapper autumn-wrapper">
+      <div class="hero-content">
+        <span class="autumn-badge">🍂 Volumen 2 • Estilo Manga</span>
+        <h2 style="color: #d35400;">Leo i Vam</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 15px;"><strong>Amistad, naturaleza y la magia de crecer.</strong></p>
+        <p>Leo y Vam regresan en una aventura otoñal llena de color. Un cuento ilustrado con estética manga que celebra la conexión con la naturaleza y la belleza de compartir momentos con quienes queremos.</p>
+        
+        <ul class="feature-list autumn-list">
+          <li><i class="fas fa-leaf"></i> Conexión con la naturaleza y el entorno.</li>
+          <li><i class="fas fa-user-friends"></i> El valor de la amistad verdadera.</li>
+          <li><i class="fas fa-paint-brush"></i> Ilustraciones vibrantes estilo manga.</li>
+        </ul>
+        
+        <a href="#" class="btn btn-leo" target="_blank" rel="noopener">
+          <i class="fas fa-shopping-basket"></i> Ver detalles
+        </a>
+      </div>
+
+      <div class="hero-image">
+        <img src="leo-i-vam-2.jpg" alt="Portada de Leo i Vam Volumen 2" style="border: 4px solid #fff; max-width: 300px; box-shadow: 0 15px 30px rgba(230, 126, 34, 0.3);">
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2 style="color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">Lo que dicen las familias</h2>
+      
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p><em>"Desde que leemos 'Sofía y Lam' por las noches, notamos que nuestro hijo descansa mejor. Es una historia que calma el alma."</em></p>
+        <strong style="display:block; margin-top:10px; color:var(--primary);">— Marta R., madre de Lucas (6 años)</strong>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <p><em>"Ingrid tiene un don para tocar el corazón de los niños. Estamos deseando leer las nuevas aventuras."</em></p>
+        <strong style="display:block; margin-top:10px; color:var(--primary);">— David L., Educador Infantil</strong>
+      </div>
+    </div>
+  </section>
+
+  <div style="background: white; padding: 60px 0; text-align: center;">
+    <div class="container">
+      <h2>Regala raíces y alas a tu hijo</h2>
+      <p style="margin-bottom: 30px;">La infancia es el momento de sembrar la confianza.</p>
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="https://www.casadellibro.com/libro-sofia-y-lam/9788410372443/16554771" class="btn" target="_blank">Sofía y Lam</a>
+        <a href="https://www.amazon.es/dp/B0G62V5DNX?ref=ppx_yo2ov_dt_b_fed_asin_title" class="btn btn-amazon" target="_blank">Ariadna</a>
+        <a href="#" class="btn btn-leo" target="_blank">Leo i Vam</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Cuentos de Ingrid Bellaubí.</p>
+      <p>Inspirados en la fuerza del mar y el calor del hogar.</p>
+      <div style="margin-top: 15px; font-size: 1.5rem;">
+        <a href="#" style="color:#ccc; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        <a href="#" style="color:#ccc; margin: 0 10px;"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
