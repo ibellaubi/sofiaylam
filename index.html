@@ -397,12 +397,13 @@
       border-radius: 18px;
       background: transparent;
       box-shadow: 0 24px 48px rgba(37, 48, 71, 0.18);
-      transition: transform 0.25s ease;
+      transition: width 0.85s ease, left 0.85s ease, right 0.85s ease, top 0.85s ease, transform 0.85s ease, z-index 0.85s ease, opacity 0.85s ease;
+      will-change: width, left, right, top, transform;
     }
 
-    .book-stage .book-one { width: clamp(160px, 19vw, 255px); left: 0; top: 22%; transform: rotate(-10deg); }
-    .book-stage .book-two { width: clamp(195px, 23vw, 305px); left: 27%; top: 0; transform: rotate(1deg); z-index: 2; }
-    .book-stage .book-three { width: clamp(160px, 19vw, 255px); right: 0; top: 23%; transform: rotate(10deg); }
+    .book-stage .book-one { width: clamp(160px, 19vw, 255px); left: 0; right: auto; top: 22%; transform: rotate(-10deg); z-index: 1; opacity: 0.96; }
+    .book-stage .book-two { width: clamp(195px, 23vw, 305px); left: 27%; right: auto; top: 0; transform: rotate(1deg); z-index: 3; opacity: 1; }
+    .book-stage .book-three { width: clamp(160px, 19vw, 255px); left: auto; right: 0; top: 23%; transform: rotate(10deg); z-index: 1; opacity: 0.96; }
 
     .hero-techniques {
       position: relative;
@@ -933,9 +934,9 @@
       .floating-label { top: 0; right: 0; font-size: 0.7rem; }
       .book-stage { height: 310px; margin-top: 44px; }
       .book-stage img { border-radius: 14px; }
-      .book-stage .book-one { width: min(38vw, 165px); left: 0; top: 24%; }
-      .book-stage .book-two { width: min(46vw, 205px); left: 26%; }
-      .book-stage .book-three { width: min(38vw, 165px); right: 0; top: 25%; }
+      .book-stage .book-one { width: min(38vw, 165px); left: 0; right: auto; top: 24%; }
+      .book-stage .book-two { width: min(46vw, 205px); left: 26%; right: auto; }
+      .book-stage .book-three { width: min(38vw, 165px); left: auto; right: 0; top: 25%; }
 
       .trust-strip { transform: translateY(-20px); }
       .trust-grid, .audience-grid { grid-template-columns: 1fr; }
@@ -1277,6 +1278,7 @@
   <script>
     const menuButton = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     menuButton.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('is-open');
@@ -1293,6 +1295,37 @@
         menuButton.innerHTML = '<i class="fas fa-bars" aria-hidden="true"></i>';
       });
     });
+
+    const bookStage = document.querySelector('.book-stage');
+    const heroBooks = document.querySelectorAll('.book-stage img');
+
+    if (bookStage && heroBooks.length === 3 && !prefersReducedMotion) {
+      const positions = ['book-one', 'book-two', 'book-three'];
+      let rotationStep = 0;
+      let rotationTimer;
+
+      const rotateBooks = () => {
+        heroBooks.forEach((book, index) => {
+          book.classList.remove(...positions);
+          book.classList.add(positions[(index + rotationStep) % positions.length]);
+        });
+        rotationStep = (rotationStep + 1) % positions.length;
+      };
+
+      const startBookRotation = () => {
+        rotationTimer = window.setInterval(rotateBooks, 3600);
+      };
+
+      const stopBookRotation = () => {
+        window.clearInterval(rotationTimer);
+      };
+
+      startBookRotation();
+      bookStage.addEventListener('mouseenter', stopBookRotation);
+      bookStage.addEventListener('mouseleave', startBookRotation);
+      bookStage.addEventListener('focusin', stopBookRotation);
+      bookStage.addEventListener('focusout', startBookRotation);
+    }
   </script>
 </body>
 </html>
