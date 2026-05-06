@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Ingrid Bellaubí | Libros infantiles para acompañar emociones</title>
-  <meta name="description" content="Cuentos ilustrados y libro para colorear de Ingrid Bellaubí. Libros infantiles para acompañar autoestima, rabia, miedo, confianza, divorcio y cambios familiares." />
+  <title>Ingrid Bellaubí | Cuentos infantiles de educación emocional</title>
+  <meta name="description" content="Libros infantiles de educación emocional de Ingrid Bellaubí: cuentos ilustrados y libro para colorear para trabajar autoestima, rechazo, abandono, rabia, divorcio, respiración consciente y afirmaciones positivas." />
   <meta name="author" content="Ingrid Bellaubí" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#C79A2B" />
 
-  <meta property="og:title" content="Ingrid Bellaubí | Libros infantiles para acompañar emociones" />
-  <meta property="og:description" content="Historias ilustradas para ayudar a niños, familias y escuelas a hablar de emociones con ternura y claridad." />
+  <meta property="og:title" content="Ingrid Bellaubí | Cuentos infantiles de educación emocional" />
+  <meta property="og:description" content="Cuentos ilustrados y libro para colorear para trabajar autoestima, rechazo, abandono, divorcio, respiración consciente y afirmaciones positivas." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://i.imgur.com/cAPw19S.jpeg" />
   <meta property="og:locale" content="es_ES" />
@@ -563,6 +563,98 @@
 
     .books-grid { display: grid; gap: 30px; }
 
+    .seo-content-section {
+      padding: 0 0 var(--section-gap);
+      scroll-margin-top: calc(var(--nav-height) + 28px);
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .topic-card {
+      padding: 26px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 248, 233, 0.38);
+      border: 1px solid rgba(199, 154, 43, 0.22);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 22px rgba(199, 154, 43, 0.07);
+    }
+
+    .topic-card i {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      border-radius: 999px;
+      background: rgba(199, 154, 43, 0.14);
+      color: var(--gold-1);
+    }
+
+    .topic-card h3 {
+      font-size: 1.22rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .topic-card p { margin-bottom: 14px; }
+
+    .topic-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold-1);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .topic-card a:hover { text-decoration: underline; }
+
+    .faq-list {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      border-radius: 20px;
+      background: rgba(255, 248, 233, 0.42);
+      border: 1px solid rgba(199, 154, 43, 0.22);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 22px rgba(199, 154, 43, 0.06);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      padding: 18px 20px;
+      color: var(--ink);
+      font-weight: 800;
+      font-family: 'Montserrat', sans-serif;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      float: right;
+      color: var(--gold-1);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .faq-item[open] summary::after { content: "–"; }
+
+    .faq-item p {
+      padding: 0 20px 18px;
+    }
+
     .book-card {
       position: relative;
       display: grid;
@@ -996,7 +1088,7 @@
       .book-stage img { border-radius: 14px; }
 
       .trust-strip { transform: translateY(-20px); }
-      .trust-grid, .audience-grid { grid-template-columns: 1fr; }
+      .trust-grid, .audience-grid, .topic-grid { grid-template-columns: 1fr; }
       .book-card, .final-cta { padding: 24px; }
       .author-panel { padding: 0; }
       .philosophy-shell { padding: 0; }
@@ -1061,6 +1153,128 @@
     "knowsAbout": ["literatura infantil", "cuentos ilustrados", "educación emocional", "libros infantiles"]
   }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Book",
+        "name": "Sofía y Lam",
+        "author": {
+          "@type": "Person",
+          "name": "Ingrid Bellaubí"
+        },
+        "inLanguage": ["es", "ca"],
+        "image": "https://images-na.ssl-images-amazon.com/images/P/B0GPPLKRZ4.01.L.jpg",
+        "description": "Cuento infantil ilustrado para trabajar autoestima, rechazo, miedo, confianza y seguridad interior.",
+        "genre": ["Literatura infantil", "Educación emocional"],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://amzn.eu/d/03AvU4m7",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "url": "https://amzn.eu/d/0dkNm1UR",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      },
+      {
+        "@type": "Book",
+        "name": "Leo y Vam",
+        "author": {
+          "@type": "Person",
+          "name": "Ingrid Bellaubí"
+        },
+        "inLanguage": ["es", "ca"],
+        "image": "https://images-na.ssl-images-amazon.com/images/P/B0G64V7B9L.01.L.jpg",
+        "description": "Cuento infantil ilustrado para hablar de abandono, rabia, divorcio, separación y cambios familiares.",
+        "genre": ["Literatura infantil", "Educación emocional"],
+        "offers": [
+          {
+            "@type": "Offer",
+            "url": "https://amzn.eu/d/0djYtOXx",
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "url": "https://amzn.eu/d/00OaPzhe",
+            "availability": "https://schema.org/InStock"
+          }
+        ]
+      },
+      {
+        "@type": "Book",
+        "name": "Libro para colorear de Sofía y Lam",
+        "author": {
+          "@type": "Person",
+          "name": "Ingrid Bellaubí"
+        },
+        "inLanguage": "es",
+        "image": "https://images-na.ssl-images-amazon.com/images/P/B0GZ3J24BJ.01.L.jpg",
+        "description": "Libro infantil para colorear con respiración consciente, afirmaciones positivas, calma, creatividad y expresión emocional.",
+        "genre": ["Libro para colorear", "Educación emocional"],
+        "offers": {
+          "@type": "Offer",
+          "url": "https://amzn.eu/d/00vjAnon",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Para qué edad son estos cuentos infantiles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Están pensados para niños y niñas que empiezan a reconocer y nombrar sus emociones, especialmente cuando necesitan acompañamiento adulto para hablar de miedo, rabia, rechazo, abandono o cambios familiares."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Sirven para trabajar educación emocional en el aula?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí. Los cuentos pueden utilizarse como punto de partida para hablar de autoestima, convivencia, pertenencia, separación, divorcio, rabia y seguridad interior."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué técnicas de sanación emocional aparecen en los libros?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La colección combina historias ilustradas con recursos suaves como respiración consciente, afirmaciones positivas, metáforas visuales y coloreo terapéutico."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Los cuentos sustituyen la terapia psicológica?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Estos libros no sustituyen el acompañamiento profesional cuando es necesario. Son recursos de lectura, diálogo y expresión emocional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué libro elegir primero?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para autoestima, rechazo o seguridad interior, Sofía y Lam. Para divorcio, separación, abandono o rabia, Leo y Vam. Para respirar, colorear y repetir afirmaciones positivas, el libro para colorear."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
@@ -1074,8 +1288,10 @@
       <ul id="menu-principal" class="nav-links">
         <li><a href="#libros" class="nav-cta">Comprar libros</a></li>
         <li><a href="#valor">Por qué gustan</a></li>
+        <li><a href="#temas">Temas</a></li>
         <li><a href="#filosofia">Filosofía</a></li>
         <li><a href="#para-quien">Para quién</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#autora">La autora</a></li>
       </ul>
     </div>
@@ -1222,6 +1438,39 @@
       </div>
     </section>
 
+    <section id="temas" class="seo-content-section" aria-labelledby="titulo-temas">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag"><i class="fas fa-compass" aria-hidden="true"></i> Qué trabaja cada libro</span>
+          <h2 id="titulo-temas">Cuentos infantiles para trabajar emociones concretas.</h2>
+          <p>Cada libro acompaña un momento emocional diferente. Esta estructura ayuda a familias y docentes a elegir el cuento más adecuado según la necesidad del niño.</p>
+        </div>
+
+        <div class="topic-grid">
+          <article class="topic-card">
+            <i class="fas fa-seedling" aria-hidden="true"></i>
+            <h3>Rechazo, autoestima y seguridad interior</h3>
+            <p><strong>Sofía y Lam</strong> es un cuento infantil para hablar del rechazo, el miedo a no pertenecer y la necesidad de construir una mirada más amable hacia uno mismo.</p>
+            <a href="#sofia-title"><i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Sofía y Lam</a>
+          </article>
+
+          <article class="topic-card">
+            <i class="fas fa-home" aria-hidden="true"></i>
+            <h3>Abandono, rabia, divorcio y cambios familiares</h3>
+            <p><strong>Leo y Vam</strong> acompaña a niños que atraviesan separación, divorcio o cambios familiares difíciles, ayudando a poner palabras a la rabia y la sensación de abandono.</p>
+            <a href="#leo-title"><i class="fas fa-arrow-right" aria-hidden="true"></i> Ver Leo y Vam</a>
+          </article>
+
+          <article class="topic-card">
+            <i class="fas fa-palette" aria-hidden="true"></i>
+            <h3>Respiración, afirmaciones positivas y coloreo</h3>
+            <p>El <strong>libro para colorear</strong> convierte la educación emocional en una experiencia creativa: colorear, respirar, repetir frases positivas y expresar desde la calma.</p>
+            <a href="#coloring-title"><i class="fas fa-arrow-right" aria-hidden="true"></i> Ver libro para colorear</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="filosofia" class="section philosophy-section" aria-labelledby="titulo-filosofia">
       <div class="container">
         <div class="philosophy-shell">
@@ -1294,6 +1543,43 @@
             <h3>Acompañamiento</h3>
             <p>Para bibliotecas, talleres o contextos terapéuticos donde el cuento y el color sirven como detonantes de diálogo.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="seo-content-section" aria-labelledby="titulo-faq">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag"><i class="fas fa-circle-question" aria-hidden="true"></i> Preguntas frecuentes</span>
+          <h2 id="titulo-faq">Dudas habituales sobre los cuentos.</h2>
+          <p>Respuestas claras para familias, docentes y personas que buscan libros infantiles de educación emocional.</p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>¿Para qué edad son estos cuentos infantiles?</summary>
+            <p>Están pensados para niños y niñas que empiezan a reconocer y nombrar sus emociones, especialmente cuando necesitan acompañamiento adulto para hablar de miedo, rabia, rechazo, abandono o cambios familiares. También pueden leerse en familia o en el aula como recurso de educación emocional.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Sirven para trabajar educación emocional en el aula?</summary>
+            <p>Sí. Los cuentos pueden utilizarse como punto de partida para hablar de autoestima, convivencia, pertenencia, separación, divorcio, rabia y seguridad interior. Funcionan bien como lectura compartida, actividad de tutoría o propuesta de conversación emocional.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Qué técnicas de sanación emocional aparecen en los libros?</summary>
+            <p>La colección combina historias ilustradas con recursos suaves como respiración consciente, afirmaciones positivas, metáforas visuales y coloreo terapéutico. El objetivo es ayudar al niño a reconocer lo que siente y encontrar una forma amable de expresarlo.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Los cuentos sustituyen la terapia psicológica?</summary>
+            <p>No. Estos libros no sustituyen el acompañamiento profesional cuando es necesario. Son recursos de lectura, diálogo y expresión emocional que pueden complementar el acompañamiento de familias, docentes o profesionales.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>¿Qué libro elegir primero?</summary>
+            <p>Si quieres trabajar autoestima, rechazo o seguridad interior, empieza por <strong>Sofía y Lam</strong>. Si el niño atraviesa divorcio, separación, abandono o rabia, elige <strong>Leo y Vam</strong>. Si buscas una actividad tranquila para respirar, colorear y repetir afirmaciones positivas, elige el <strong>libro para colorear</strong>.</p>
+          </details>
         </div>
       </div>
     </section>
