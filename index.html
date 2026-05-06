@@ -178,6 +178,11 @@
       position: relative;
       overflow: hidden;
       padding: clamp(46px, 7vw, 90px) 0 clamp(70px, 8vw, 110px);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(246, 231, 168, 0.22), transparent 20%),
+        radial-gradient(circle at 85% 8%, rgba(229, 193, 90, 0.2), transparent 18%),
+        radial-gradient(circle at 50% 70%, rgba(199, 154, 43, 0.1), transparent 24%),
+        linear-gradient(180deg, #fffdf8 0%, #fff7e8 52%, #fffdf8 100%);
     }
 
     .hero-golden::before {
@@ -185,68 +190,69 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 20%, rgba(246, 231, 168, 0.24), transparent 22%),
-        radial-gradient(circle at 80% 15%, rgba(229, 193, 90, 0.2), transparent 20%),
-        radial-gradient(circle at 50% 85%, rgba(199, 154, 43, 0.08), transparent 24%);
+        radial-gradient(circle at 18% 18%, rgba(255, 232, 153, 0.22) 0 1.5px, transparent 2.6px),
+        radial-gradient(circle at 34% 12%, rgba(255, 215, 102, 0.85) 0 1.4px, transparent 2.3px),
+        radial-gradient(circle at 48% 28%, rgba(255, 244, 204, 0.9) 0 1.2px, transparent 2px),
+        radial-gradient(circle at 66% 16%, rgba(255, 226, 132, 0.85) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 81% 24%, rgba(255, 240, 188, 0.9) 0 1.3px, transparent 2.2px),
+        radial-gradient(circle at 12% 46%, rgba(255, 215, 102, 0.78) 0 1.4px, transparent 2.4px),
+        radial-gradient(circle at 28% 64%, rgba(255, 244, 204, 0.9) 0 1.1px, transparent 2px),
+        radial-gradient(circle at 45% 52%, rgba(255, 226, 132, 0.78) 0 1.4px, transparent 2.3px),
+        radial-gradient(circle at 62% 60%, rgba(255, 240, 188, 0.9) 0 1.2px, transparent 2.1px),
+        radial-gradient(circle at 76% 48%, rgba(255, 215, 102, 0.82) 0 1.5px, transparent 2.4px),
+        radial-gradient(circle at 90% 68%, rgba(255, 244, 204, 0.85) 0 1.2px, transparent 2px);
       pointer-events: none;
+      opacity: 0.95;
     }
 
-    .star-rain,
-    .star-rain::before,
-    .star-rain::after {
+    .hero-golden::after {
+      content: "";
       position: absolute;
       inset: 0;
-      content: "";
+      background:
+        radial-gradient(circle at 22% 30%, rgba(255, 215, 102, 0.45) 0 6px, transparent 18px),
+        radial-gradient(circle at 74% 18%, rgba(255, 232, 153, 0.26) 0 7px, transparent 22px),
+        radial-gradient(circle at 54% 76%, rgba(255, 232, 153, 0.22) 0 6px, transparent 20px),
+        radial-gradient(circle at 88% 54%, rgba(255, 215, 102, 0.22) 0 7px, transparent 22px);
       pointer-events: none;
+      filter: blur(2px);
+      opacity: 0.8;
     }
 
-    .star-rain {
-      z-index: 1;
+    .hero-stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
       background-image:
-        radial-gradient(circle, rgba(255, 228, 140, 0.95) 0 1.2px, transparent 1.8px),
-        radial-gradient(circle, rgba(255, 214, 94, 0.85) 0 1.5px, transparent 2px),
-        radial-gradient(circle, rgba(255, 245, 205, 0.9) 0 1px, transparent 1.6px);
-      background-size: 180px 180px, 260px 260px, 140px 140px;
-      background-position: 20px -40px, 120px 0, 60px -20px;
-      animation: starsFall 18s linear infinite;
+        radial-gradient(circle, rgba(255, 255, 255, 0.55) 0 1px, transparent 1.8px),
+        radial-gradient(circle, rgba(255, 230, 145, 0.65) 0 1.2px, transparent 2px),
+        radial-gradient(circle, rgba(255, 214, 94, 0.55) 0 1.3px, transparent 2.1px);
+      background-size: 180px 180px, 240px 240px, 300px 300px;
+      background-position: 0 0, 80px 40px, 120px 20px;
+      animation: heroTwinkle 14s linear infinite;
       opacity: 0.75;
     }
 
-    .star-rain::before {
-      background-image:
-        radial-gradient(circle, rgba(255, 228, 140, 0.8) 0 1.2px, transparent 1.8px),
-        radial-gradient(circle, rgba(255, 214, 94, 0.7) 0 1.5px, transparent 2px);
-      background-size: 220px 220px, 300px 300px;
-      background-position: 40px -120px, 140px -60px;
-      animation: starsFall 28s linear infinite;
-      opacity: 0.55;
-    }
-
-    .star-rain::after {
-      background-image:
-        radial-gradient(circle, rgba(255, 255, 255, 0.85) 0 1px, transparent 1.6px),
-        radial-gradient(circle, rgba(246, 231, 168, 0.75) 0 1.4px, transparent 2px);
-      background-size: 200px 200px, 320px 320px;
-      background-position: 80px -90px, 200px -40px;
-      animation: starsFall 36s linear infinite;
-      opacity: 0.45;
-    }
-
-    @keyframes starsFall {
-      from { transform: translateY(-30px); }
-      to { transform: translateY(220px); }
+    @keyframes heroTwinkle {
+      0% { transform: translateY(0); opacity: 0.72; }
+      50% { transform: translateY(6px); opacity: 0.92; }
+      100% { transform: translateY(0); opacity: 0.72; }
     }
 
     .hero-grid {
       position: relative;
       z-index: 2;
       display: grid;
-      grid-template-columns: minmax(0, 1.02fr) minmax(300px, 0.98fr);
-      gap: clamp(36px, 5vw, 64px);
+      grid-template-columns: minmax(0, 0.92fr) minmax(340px, 1.08fr);
+      gap: clamp(34px, 4.6vw, 58px);
       align-items: center;
     }
 
-    .hero-copy { position: relative; z-index: 3; }
+    .hero-copy {
+      position: relative;
+      z-index: 3;
+    }
 
     .hero-kicker,
     .tag {
@@ -266,8 +272,8 @@
     .hero-kicker { margin-bottom: 20px; }
 
     .hero-title {
-      font-size: clamp(3.1rem, 7vw, 6.5rem);
-      line-height: 0.97;
+      font-size: clamp(2.55rem, 5.25vw, 5.15rem);
+      line-height: 1;
       letter-spacing: -0.05em;
       color: var(--ink);
       margin-bottom: 18px;
@@ -280,7 +286,7 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(1.08rem, 1.7vw, 1.3rem);
+      font-size: clamp(1.02rem, 1.35vw, 1.18rem);
       color: var(--ink-soft);
       max-width: 700px;
       margin-bottom: 28px;
@@ -296,7 +302,7 @@
       gap: 14px;
     }
 
-    .hero-actions { margin-bottom: 24px; }
+    .hero-actions { margin-bottom: 20px; }
 
     .btn {
       display: inline-flex;
@@ -348,33 +354,24 @@
 
     .hero-showcase {
       position: relative;
-      min-height: 580px;
-      padding: 28px;
-      border-radius: 38px;
-      background:
-        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 233, 0.95)),
-        radial-gradient(circle at 82% 12%, rgba(229, 193, 90, 0.24), transparent 36%);
-      border: 1px solid rgba(255, 255, 255, 0.95);
-      box-shadow: var(--shadow-strong);
-      overflow: hidden;
+      min-height: 590px;
+      padding: 10px 0 0;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      overflow: visible;
     }
 
-    .hero-showcase::before {
-      content: "";
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      top: -90px;
-      right: -90px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(229, 193, 90, 0.26), transparent 70%);
-      pointer-events: none;
+    .hero-showcase::before,
+    .hero-showcase::after {
+      display: none;
     }
 
     .floating-label {
       position: absolute;
-      top: 22px;
-      right: 22px;
+      top: -6px;
+      right: 0;
       z-index: 4;
       display: inline-flex;
       align-items: center;
@@ -385,66 +382,68 @@
       color: var(--white);
       font-size: 0.78rem;
       font-weight: 800;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 10px 24px rgba(37, 48, 71, 0.16);
     }
 
     .book-stage {
       position: relative;
       z-index: 2;
-      height: 360px;
-      margin-top: 52px;
+      height: 400px;
+      margin-top: 42px;
     }
 
     .book-stage img {
       position: absolute;
       border-radius: 18px;
-      background: var(--white);
-      box-shadow: 0 24px 48px rgba(37, 48, 71, 0.2);
+      background: transparent;
+      box-shadow: 0 24px 48px rgba(37, 48, 71, 0.18);
       transition: transform 0.25s ease;
     }
 
-    .book-stage .book-one { width: clamp(126px, 16vw, 210px); left: 2%; top: 22%; transform: rotate(-10deg); }
-    .book-stage .book-two { width: clamp(156px, 20vw, 250px); left: 30%; top: 0; transform: rotate(1deg); z-index: 2; }
-    .book-stage .book-three { width: clamp(126px, 16vw, 210px); right: 2%; top: 23%; transform: rotate(10deg); }
+    .book-stage .book-one { width: clamp(160px, 19vw, 255px); left: 0; top: 22%; transform: rotate(-10deg); }
+    .book-stage .book-two { width: clamp(195px, 23vw, 305px); left: 27%; top: 0; transform: rotate(1deg); z-index: 2; }
+    .book-stage .book-three { width: clamp(160px, 19vw, 255px); right: 0; top: 23%; transform: rotate(10deg); }
 
     .hero-techniques {
       position: relative;
       z-index: 3;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 16px;
+      gap: 10px;
+      margin-top: 10px;
     }
 
     .tech-box {
-      padding: 14px 15px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 22px rgba(37, 48, 71, 0.05);
+      padding: 12px 14px;
+      border-radius: 20px;
+      background: rgba(255, 248, 233, 0.34);
+      border: 1px solid rgba(199, 154, 43, 0.22);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 22px rgba(199, 154, 43, 0.08);
     }
 
     .tech-box strong {
       display: block;
-      margin-bottom: 4px;
-      font-size: 0.88rem;
+      margin-bottom: 3px;
+      font-size: 0.84rem;
       color: var(--ink);
       font-family: 'Montserrat', sans-serif;
     }
 
-    .tech-box span { color: var(--ink-soft); font-size: 0.9rem; }
+    .tech-box span { color: var(--ink-soft); font-size: 0.86rem; }
 
     .hero-quote {
       position: relative;
       z-index: 3;
-      margin-top: 16px;
-      padding: 16px 18px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 253, 248, 0.9);
-      border: 1px solid var(--line);
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 22px;
+      background: rgba(255, 248, 233, 0.38);
+      border: 1px solid rgba(199, 154, 43, 0.22);
+      backdrop-filter: blur(10px);
       color: var(--ink);
       font-weight: 800;
-      box-shadow: 0 12px 28px rgba(37, 48, 71, 0.08);
+      box-shadow: 0 8px 22px rgba(199, 154, 43, 0.08);
     }
 
     .trust-strip {
@@ -834,8 +833,8 @@
     }
 
     @media (max-width: 1080px) {
-      .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(260px, 0.9fr); }
-      .hero-title { font-size: clamp(2.8rem, 6vw, 5rem); }
+      .hero-grid { grid-template-columns: minmax(0, 0.95fr) minmax(300px, 1.05fr); }
+      .hero-title { font-size: clamp(2.45rem, 5.2vw, 4.35rem); }
       .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
@@ -897,19 +896,19 @@
       .nav-cta { margin-top: 4px; }
 
       .hero-golden { padding-top: 38px; }
-      .hero-title { font-size: clamp(2.45rem, 12vw, 3.65rem); }
+      .hero-title { font-size: clamp(2.25rem, 9vw, 3.1rem); }
       .hero-subtitle { font-size: 1.02rem; }
       .hero-actions, .btn-group, .philosophy-actions { flex-direction: column; align-items: stretch; }
       .btn { width: 100%; min-height: 50px; }
 
-      .hero-showcase { border-radius: 28px; min-height: 460px; padding: 20px; }
+      .hero-showcase { min-height: 460px; padding: 8px 0 0; }
       .hero-techniques { grid-template-columns: 1fr; }
-      .floating-label { top: 18px; right: 18px; font-size: 0.7rem; }
-      .book-stage { height: 280px; margin-top: 50px; }
+      .floating-label { top: 0; right: 0; font-size: 0.7rem; }
+      .book-stage { height: 310px; margin-top: 44px; }
       .book-stage img { border-radius: 14px; }
-      .book-stage .book-one { width: min(34vw, 140px); left: 0; top: 22%; }
-      .book-stage .book-two { width: min(42vw, 180px); left: 28%; }
-      .book-stage .book-three { width: min(34vw, 140px); right: 0; top: 23%; }
+      .book-stage .book-one { width: min(38vw, 165px); left: 0; top: 24%; }
+      .book-stage .book-two { width: min(46vw, 205px); left: 26%; }
+      .book-stage .book-three { width: min(38vw, 165px); right: 0; top: 25%; }
 
       .trust-strip { transform: translateY(-20px); }
       .trust-grid, .audience-grid { grid-template-columns: 1fr; }
@@ -922,10 +921,10 @@
       :root { --page-pad: 14px; --radius-xl: 26px; --radius-lg: 20px; }
       .brand { font-size: 1rem; }
       .tag, .hero-kicker { font-size: 0.66rem; line-height: 1.25; letter-spacing: 0.07em; }
-      .hero-title { font-size: clamp(2.25rem, 13vw, 3rem); }
+      .hero-title { font-size: clamp(2.05rem, 11vw, 2.75rem); }
       .hero-pill { width: 100%; justify-content: center; }
-      .hero-showcase { min-height: 430px; padding: 18px; }
-      .book-stage { height: 262px; }
+      .hero-showcase { min-height: 470px; padding: 6px 0 0; }
+      .book-stage { height: 285px; }
       .hero-quote { font-size: 0.95rem; padding: 15px; }
       .book-cover img { width: min(245px, 84vw); }
       .philosophy-image-wrap {
@@ -942,7 +941,10 @@
 
     @media (min-width: 1500px) {
       :root { --container: 1260px; }
-      .hero-title { font-size: 7rem; }
+      .hero-title { font-size: 5.6rem; }
+      .book-stage .book-one { width: 275px; }
+      .book-stage .book-two { width: 330px; }
+      .book-stage .book-three { width: 275px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -989,7 +991,7 @@
 
   <main id="contenido">
     <section class="hero-golden">
-      <div class="star-rain" aria-hidden="true"></div>
+      <div class="hero-stars" aria-hidden="true"></div>
 
       <div class="container hero-grid">
         <div class="hero-copy">
