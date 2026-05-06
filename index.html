@@ -570,34 +570,27 @@
     .btn-leo-outline:hover { background: var(--mauve); color: var(--white); }
     .btn-creative { background: linear-gradient(135deg, #D19A2A, var(--gold-2)); color: var(--ink); }
 
-    .philosophy-section { padding: 0 0 var(--section-gap); }
+    .philosophy-section {
+      position: relative;
+      padding: clamp(24px, 4vw, 46px) 0 var(--section-gap);
+    }
 
     .philosophy-shell {
       position: relative;
       display: grid;
-      grid-template-columns: minmax(320px, 0.86fr) minmax(0, 1.14fr);
-      gap: clamp(30px, 4.5vw, 60px);
+      grid-template-columns: minmax(360px, 0.98fr) minmax(0, 1.02fr);
+      gap: clamp(34px, 5vw, 64px);
       align-items: center;
-      padding: clamp(26px, 4vw, 42px);
-      border-radius: var(--radius-xl);
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 248, 233, 0.88)),
-        radial-gradient(circle at 88% 10%, rgba(229, 193, 90, 0.22), transparent 38%);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-strong);
-      overflow: hidden;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      overflow: visible;
     }
 
     .philosophy-shell::before {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      border-radius: 999px;
-      right: -180px;
-      top: -190px;
-      background: radial-gradient(circle, rgba(229, 193, 90, 0.26), transparent 68%);
-      pointer-events: none;
+      display: none;
     }
 
     .philosophy-figure,
@@ -611,12 +604,12 @@
 
     .philosophy-image-wrap {
       position: relative;
-      width: min(100%, 480px);
+      width: min(100%, 540px);
       overflow: hidden;
       border-radius: 30px;
-      background: var(--champagne);
-      border: 1px solid var(--line);
-      box-shadow: 0 24px 60px rgba(37, 48, 71, 0.16);
+      background: transparent;
+      border: none;
+      box-shadow: 0 24px 56px rgba(37, 48, 71, 0.14);
       aspect-ratio: 4 / 5;
     }
 
@@ -673,39 +666,46 @@
     .philosophy-copy .tag { margin-bottom: 14px; }
 
     .philosophy-copy h2 {
-      font-size: clamp(2.2rem, 4.7vw, 4.1rem);
+      font-size: clamp(2.05rem, 3.8vw, 3.35rem);
+      line-height: 1.08;
       margin-bottom: 16px;
     }
 
     .philosophy-lead {
-      font-size: clamp(1.04rem, 1.45vw, 1.16rem);
+      font-size: clamp(1.02rem, 1.25vw, 1.1rem);
       color: var(--ink);
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    .philosophy-copy p { margin-bottom: 14px; }
+    .philosophy-copy p {
+      margin-bottom: 14px;
+      max-width: 620px;
+    }
 
     .philosophy-points {
       display: grid;
-      gap: 14px;
-      margin: 24px 0 28px;
+      gap: 12px;
+      margin: 22px 0 24px;
+      max-width: 620px;
     }
 
     .philosophy-point {
       display: flex;
-      gap: 14px;
+      gap: 13px;
       align-items: flex-start;
-      padding: 16px 18px;
+      padding: 14px 16px;
       border-radius: 20px;
-      background: rgba(255, 248, 233, 0.78);
-      border: 1px solid var(--line);
+      background: rgba(255, 248, 233, 0.38);
+      border: 1px solid rgba(199, 154, 43, 0.22);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 22px rgba(199, 154, 43, 0.07);
     }
 
     .philosophy-point-icon {
-      flex: 0 0 44px;
-      width: 44px;
-      height: 44px;
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -716,16 +716,22 @@
 
     .philosophy-point strong {
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       color: var(--ink);
       font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .philosophy-point span:not(.philosophy-point-icon) {
       font-size: 0.94rem;
+      color: var(--ink-soft);
     }
 
     .philosophy-highlight {
       padding: 12px 16px;
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid var(--line);
+      background: rgba(255, 248, 233, 0.38);
+      border: 1px solid rgba(199, 154, 43, 0.22);
+      backdrop-filter: blur(10px);
       color: var(--ink);
     }
 
@@ -762,28 +768,45 @@
 
     .author-panel {
       display: grid;
-      grid-template-columns: clamp(155px, 18vw, 210px) minmax(0, 1fr);
-      gap: clamp(28px, 4.5vw, 52px);
+      grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+      gap: clamp(32px, 5vw, 64px);
       align-items: center;
-      padding: clamp(30px, 5vw, 54px);
-      border-radius: var(--radius-xl);
-      background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 246, 237, 0.92)),
-        radial-gradient(circle at 85% 10%, rgba(233, 196, 106, 0.24), transparent 38%);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow-strong);
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
     }
 
     .author-img {
-      width: clamp(155px, 18vw, 210px);
-      height: clamp(155px, 18vw, 210px);
+      width: clamp(190px, 24vw, 300px);
+      height: clamp(190px, 24vw, 300px);
       object-fit: cover;
       border-radius: 999px;
-      border: 8px solid var(--white);
-      box-shadow: 0 20px 46px rgba(34, 48, 68, 0.16);
+      border: 6px solid rgba(255, 248, 233, 0.72);
+      box-shadow: 0 24px 56px rgba(37, 48, 71, 0.14);
     }
 
-    .author-panel h2 { font-size: clamp(2.3rem, 5vw, 4.4rem); margin: 12px 0 16px; }
+    .author-panel h2 {
+      font-size: clamp(2.05rem, 4vw, 3.45rem);
+      line-height: 1.08;
+      margin: 12px 0 14px;
+    }
+
+    .author-panel p {
+      max-width: 690px;
+      font-size: clamp(1.02rem, 1.22vw, 1.1rem);
+    }
+
+    .author-panel .contact-row {
+      margin-top: 22px;
+    }
+
+    .author-panel .btn-soft {
+      background: rgba(255, 248, 233, 0.38);
+      border-color: rgba(199, 154, 43, 0.22);
+      backdrop-filter: blur(10px);
+    }
 
     .final-cta {
       margin-top: var(--section-gap);
@@ -862,12 +885,16 @@
       .book-card.reverse .book-cover { order: 0; }
       .philosophy-figure { order: -1; }
       .philosophy-image-wrap {
-        width: min(100%, 420px);
+        width: min(100%, 460px);
         max-width: none;
         margin: 0 auto;
       }
+
+      .philosophy-copy p,
+      .philosophy-points { max-width: 720px; margin-left: auto; margin-right: auto; }
       .philosophy-point { text-align: left; }
       .author-panel { justify-items: center; }
+      .author-panel p { max-width: 720px; margin-left: auto; margin-right: auto; }
     }
 
     @media (max-width: 760px) {
@@ -912,7 +939,9 @@
 
       .trust-strip { transform: translateY(-20px); }
       .trust-grid, .audience-grid { grid-template-columns: 1fr; }
-      .book-card, .philosophy-shell, .author-panel, .final-cta { padding: 24px; }
+      .book-card, .final-cta { padding: 24px; }
+      .author-panel { padding: 0; }
+      .philosophy-shell { padding: 0; }
       .section-header h2 { font-size: clamp(2.25rem, 10vw, 3.2rem); }
       .highlight { text-align: left; }
     }
@@ -927,9 +956,10 @@
       .book-stage { height: 285px; }
       .hero-quote { font-size: 0.95rem; padding: 15px; }
       .book-cover img { width: min(245px, 84vw); }
+      .author-img { width: min(230px, 68vw); height: min(230px, 68vw); }
       .philosophy-image-wrap {
         width: 100%;
-        max-width: 360px;
+        max-width: 380px;
         border-radius: 22px;
         aspect-ratio: 4 / 5;
       }
