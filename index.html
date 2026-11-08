@@ -163,6 +163,21 @@ body{font-family:'Quicksand',system-ui,sans-serif;background:var(--cream)}
 #libros .book-card .book-cover img.amazon-cover{width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center}
 
 .book-detail-link{margin:12px 0!important}.book-detail-link a{font-size:14px;font-weight:700;text-underline-offset:4px}.nav-links{gap:16px}
+
+/* Acceso destacado desde la bio a la nueva meditación musical. */
+.music-strip{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(100deg,#1d493c 0%,#345f50 58%,#6d5077 100%);color:#fffdf5;border-bottom:1px solid #ffffff24}
+.music-strip:before,.music-strip:after{content:'';position:absolute;z-index:-1;border-radius:50%;border:1px solid #f4db9b33;pointer-events:none}
+.music-strip:before{width:250px;height:250px;right:8%;top:-170px}.music-strip:after{width:140px;height:140px;right:3%;top:-80px}
+.music-strip-inner{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px;padding-block:13px}
+.music-strip-copy{display:flex;align-items:center;gap:15px;min-width:0}
+.music-strip-icon{width:44px;height:44px;display:grid;place-items:center;flex:0 0 auto;border-radius:50%;background:#f0d79a;color:#214f42;box-shadow:0 8px 20px #10261f55}
+.music-strip-text{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.music-strip-kicker{font:700 10px/1.4 'Montserrat',sans-serif;letter-spacing:1.5px;color:#f0dca9}
+.music-strip-title{font:600 24px/1.1 'Cormorant Garamond',Georgia,serif;color:#fffdf5}
+.music-strip-note{font-size:13px;color:#d8e4dd}
+.music-strip-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 17px;border:1px solid #f2d899;background:#f2d899;color:#193c31;border-radius:3px;text-decoration:none;white-space:nowrap;font:700 12px/1.2 'Montserrat',sans-serif}
+.music-strip-link:hover{background:#ffe8b1;border-color:#ffe8b1}
+@media(max-width:760px){.music-strip-inner{align-items:stretch;flex-direction:column;gap:10px;padding-block:16px}.music-strip-text{display:block}.music-strip-title{display:block;font-size:25px;margin:2px 0 3px}.music-strip-link{width:100%}.music-strip-note{display:block}}
 </style>
 
 <script type="application/ld+json">
@@ -364,6 +379,20 @@ body{font-family:'Quicksand',system-ui,sans-serif;background:var(--cream)}
 </ul>
 </div>
 </nav>
+
+<aside class="music-strip" aria-label="Nueva meditación musical Tu Jardín Tranquilo">
+<div class="container music-strip-inner">
+<div class="music-strip-copy">
+<span class="music-strip-icon" aria-hidden="true"><i class="fas fa-music"></i></span>
+<div class="music-strip-text">
+<span class="music-strip-kicker">NUEVA · MEDITACIÓN MUSICAL</span>
+<strong class="music-strip-title">Tu Jardín Tranquilo</strong>
+<span class="music-strip-note">5 minutos para respirar, soltar y volver a la calma.</span>
+</div>
+</div>
+<a class="music-strip-link" href="https://suno.com/song/88cb63a5-7113-41c0-ba05-1a11909ba38a" target="_blank" rel="noopener noreferrer" aria-label="Escuchar gratis Tu Jardín Tranquilo en Suno">Escuchar gratis <span aria-hidden="true">▶</span></a>
+</div>
+</aside>
 
 <main id="contenido">
 <section class="hero">
