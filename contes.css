@@ -1,26 +1,157 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Quicksand:wght@400;500;600;700&display=swap');
-:root{--ink:#332b40;--soft:#625b68;--paper:#fcf9f2;--accent:#504066;--pale:#f1edf5}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 Quicksand,system-ui,sans-serif}a{color:inherit}button{font:inherit}h1,h2,h3{line-height:1.12;font-family:'Cormorant Garamond',Georgia,serif;margin:0 0 20px}h1{font-size:clamp(40px,5.4vw,72px)}h2{font-size:clamp(32px,4vw,48px)}h3{font-size:30px}p{margin:0 0 20px}header{border-bottom:1px solid #ded7df;background:#fcf9f2f5;position:sticky;top:0;z-index:5}nav,.wrap{width:min(1140px,calc(100% - 40px));margin:auto}nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:18px}nav>a{font:28px Georgia;text-decoration:none}nav div{display:flex;gap:20px;font-size:14px;font-weight:700}nav div a{text-decoration:none}.crumb{font-size:13px;margin:28px 0}.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;padding:30px 0 70px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:18px}.lead{font-size:21px}.cover-frame{background:var(--pale);padding:25px;border-radius:18px}.cover-frame img{display:block;width:100%;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 14px 14px #20132126)}.lang{display:flex;gap:8px;justify-content:center;margin-top:20px}.lang button{background:transparent;border:1px solid var(--accent);border-radius:30px;padding:8px 18px;cursor:pointer;color:var(--accent);min-height:44px}.lang button[aria-pressed=true]{background:var(--accent);color:white}.actions{display:flex;gap:10px;margin:26px 0;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border:1px solid var(--accent);background:var(--accent);color:white;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px}.btn.alt{background:transparent;color:var(--accent)}.jump{display:flex;gap:12px;flex-wrap:wrap;padding:22px 0;border-block:1px solid #ddd3df;margin-bottom:60px;font-size:14px}.jump a{padding:5px 10px}section{scroll-margin-top:110px;margin-bottom:70px}.columns{display:grid;grid-template-columns:1.05fr 1fr;gap:56px}.panel{padding:30px;border-radius:16px;background:var(--pale)}.panel li{margin-bottom:14px}.note{font-size:14px;color:var(--soft)}.steps{list-style:none;padding:0;counter-reset:step}.steps li{position:relative;padding:18px 0 18px 54px;border-bottom:1px solid #ddd3df;counter-increment:step}.steps li:before{content:counter(step);position:absolute;left:0;top:20px;background:var(--accent);color:white;border-radius:50%;width:32px;height:32px;display:grid;place-items:center;font-size:14px}.quote{font:32px/1.3 Georgia;color:var(--accent);padding:25px 0;border-block:1px solid #ddd3df}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.card{padding:30px;border-radius:16px;background:var(--pale);border-top:4px solid var(--accent)}.card img{width:130px;height:130px;object-fit:contain;float:right;margin:0 0 20px 20px}.card a{font-weight:700}.card p{font-size:16px}.support{background:#eee8f2;padding:30px;border-radius:12px}.sources{font-size:13px}footer{border-top:1px solid #ddd3df;padding:30px 0;font-size:14px}.skip{position:absolute;top:-100px}.skip:focus{top:0;background:white;padding:15px;z-index:20}:focus-visible{outline:3px solid #ab6d1d;outline-offset:4px}details{border-bottom:1px solid #ddd3df;padding:18px 0}summary{cursor:pointer;font-weight:700}details p{margin-top:18px}@media(max-width:720px){nav{flex-wrap:wrap}nav div{gap:16px;flex-wrap:wrap}.hero,.columns{grid-template-columns:1fr;gap:30px}.hero{padding-bottom:40px}.hero figure{margin:0 auto;max-width:420px}.cards{grid-template-columns:1fr}.panel{padding:22px}section{margin-bottom:45px}.actions .btn{flex:1}.card img{width:95px;height:95px}.jump{margin-bottom:40px}body{font-size:16px}}
+/* Ingrid Bellaubí — estilo común de páginas interiores (alineado con la portada, nov 2026) */
+:root{--ink:#352d44;--soft:#625c6b;--paper:#fffbf6;--line:#e1d8e6;--purple:#4e3c6b;--deep:#241d3c;--peach:#f1cfac;--peach-ink:#39273d;--gold:#e4ca8c;--pale:#f4eef7;--accent:#4e3c6b;--container:1220px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.75 Quicksand,system-ui,sans-serif}
+img{max-width:100%;height:auto}
+a{color:inherit}
+button{font:inherit}
+h1,h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.06;letter-spacing:-.02em;margin:0 0 20px}
+h3{font-family:Montserrat,sans-serif;font-weight:700;font-size:17px;line-height:1.35;margin:0 0 12px;color:#473551}
+h1{font-size:clamp(2.6rem,5.2vw,4.6rem)}
+h2{font-size:clamp(2.1rem,3.8vw,3.3rem)}
+p{margin:0 0 20px;color:var(--soft)}
+li{color:var(--soft)}
+strong{color:var(--ink)}
+:focus-visible{outline:3px solid #ab6d1d;outline-offset:4px}
+.skip{position:absolute;top:-100px;left:16px}
+.skip:focus{top:12px;background:#fff;padding:12px;z-index:40}
 
-/* === conversión (añadido 2026-11) === */
-.buybox{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;border:1px solid rgba(0,0,0,.1);border-left:5px solid var(--bk,var(--accent));border-radius:16px;padding:16px 18px;margin:2em 0;background:#fff}
+/* ---------- Navegación (idéntica a la portada) ---------- */
+.navbar{position:sticky;top:0;z-index:20;background:#faf7f0f7;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav-inner{width:min(calc(100% - 40px),var(--container));margin-inline:auto;min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;flex-direction:column;gap:2px;line-height:1.2;text-decoration:none;white-space:nowrap}
+.brand .brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;color:#493556}
+.brand small{font:10px/1.6 Montserrat,sans-serif;letter-spacing:2px;color:#5c675e}
+.nav-links{display:flex;align-items:center;list-style:none;gap:18px;margin:0;padding:0}
+.nav-links a{white-space:nowrap;font-size:14px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;min-height:44px;color:var(--ink)}
+.nav-links a:hover{text-decoration:underline;text-underline-offset:5px}
+.nav-links .nav-cta{background:var(--purple);color:#fff;padding:9px 18px;border-radius:3px;min-height:0;margin-block:5px}
+.nav-links .nav-cta:hover{background:#3b2d52;text-decoration:none}
+.nav-social{display:flex;gap:6px}
+.nav-social a{width:36px;height:36px;justify-content:center;border-radius:50%;border:1px solid var(--line);min-height:0}
+.nav-social svg{width:17px;height:17px}
+.menu-toggle{display:none;min-width:44px;min-height:44px;border:1px solid var(--line);background:#fff;border-radius:10px;color:var(--ink);cursor:pointer}
+
+/* ---------- Estructura ---------- */
+.wrap{width:min(var(--container),calc(100% - 40px));margin:auto}
+main section{scroll-margin-top:110px;margin-bottom:76px}
+.crumb{font-size:13px;margin:24px 0;color:var(--soft)}
+.crumb a{color:var(--soft)}
+.eyebrow{font:600 12px/1.4 Montserrat,sans-serif;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:16px}
+.lead{font-size:21px;color:var(--ink)}
+.note{font-size:14px;color:var(--soft)}
+.sources{font-size:13px;color:var(--soft);border-top:1px solid var(--line);padding-top:18px}
+
+/* Hero oscuro como la portada */
+.hero{position:relative;display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:center;padding:56px clamp(24px,5vw,64px);margin:0 0 56px;border-radius:24px;overflow:hidden;color:#fff9eb;
+ background:radial-gradient(ellipse at 10% 10%,#922f526b,transparent 55%),radial-gradient(ellipse at 80% 0%,#217b8d66,transparent 45%),radial-gradient(ellipse at 80% 100%,#7245aa80,transparent 60%),var(--deep)}
+.hero h1{color:#fff9eb}
+.hero p,.hero .note{color:#d9d2e3}
+.hero .lead{color:#fff3df}
+.hero .eyebrow{color:var(--gold)}
+.hero .btn{background:var(--peach);border-color:var(--peach);color:var(--peach-ink)}
+.hero .btn:hover{background:#ffe2c4}
+.hero .btn.alt{background:transparent;border-color:#a497b4;color:#fff7e7}
+.hero .btn.alt:hover{background:#ffffff14}
+.hero figure{margin:0}
+.cover-frame{background:#ffffff14;padding:22px;border-radius:18px;border:1px solid #ffffff1f}
+.cover-frame img{display:block;width:100%;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 18px 18px #0006)}
+.lang{display:flex;gap:8px;justify-content:center;margin-top:18px}
+.lang button{background:transparent;border:1px solid #cdbfe0;border-radius:30px;padding:8px 18px;cursor:pointer;color:#fff7e7;min-height:44px}
+.lang button[aria-pressed=true]{background:var(--peach);border-color:var(--peach);color:var(--peach-ink)}
+.proof-line{color:#f3e4c4!important}
+
+/* Botones */
+.actions{display:flex;gap:10px;margin:24px 0;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:13px 22px;border:1px solid var(--accent);background:var(--accent);color:#fff;border-radius:3px;text-decoration:none;font:700 13px/1.4 Montserrat,sans-serif;letter-spacing:.3px;cursor:pointer;transition:background .2s}
+.btn:hover{filter:brightness(.92)}
+.btn.alt{background:transparent;color:var(--accent)}
+.btn.alt:hover{background:var(--pale);filter:none}
+
+/* Bloques de contenido */
+.jump{display:flex;gap:10px;flex-wrap:wrap;padding:18px 0;border-block:1px solid var(--line);margin-bottom:56px;font-size:14px;font-weight:600}
+.jump a{padding:6px 14px;border-radius:30px;background:var(--pale);text-decoration:none}
+.columns{display:grid;grid-template-columns:1.05fr 1fr;gap:56px}
+.panel{padding:32px;border-radius:18px;background:var(--pale);border:1px solid var(--line)}
+.panel li{margin-bottom:12px}
+.steps{list-style:none;padding:0;counter-reset:step}
+.steps li{position:relative;padding:18px 0 18px 56px;border-bottom:1px solid var(--line);counter-increment:step}
+.steps li:before{content:counter(step);position:absolute;left:0;top:18px;background:var(--accent);color:#fff;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font:700 14px Montserrat,sans-serif}
+.quote{font:500 italic 32px/1.3 'Cormorant Garamond',Georgia,serif;color:var(--accent);padding:24px 0;border-block:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{padding:30px;border-radius:18px;background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent)}
+.card img{width:130px;height:130px;object-fit:contain;float:right;margin:0 0 20px 20px}
+.card a{font-weight:700}
+.card p{font-size:16px}
+.support{background:var(--pale);padding:30px;border-radius:14px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{cursor:pointer;font-weight:700}
+details p{margin-top:18px}
+
+/* Conversión */
+.buybox{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center;border:1px solid var(--line);border-left:5px solid var(--bk,var(--accent));border-radius:16px;padding:16px 18px;margin:2em 0;background:#fff}
 .buybox img{width:110px;height:auto;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.15)}
-.buybox .k{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin:0}
-.buybox h3{margin:.15em 0 .3em}
+.buybox .k{font:600 11px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin:0}
+.buybox h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;margin:.1em 0 .25em}
 .buybox p{margin:.2em 0}
-.buybox .price{font-weight:700;font-size:1.15rem}
-.buybox .proof{font-size:.85rem;opacity:.8}
-.buybox .actions{margin-top:.6em}
+.buybox .price{font-weight:700;font-size:1.15rem;color:var(--ink)}
+.buybox .proof{font-size:.85rem}
+.buybox .actions{margin:.6em 0 0}
 .buygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:1.2em 0 2em}
-.buycard{border:1px solid rgba(0,0,0,.1);border-radius:16px;padding:14px;text-align:center;background:#fff;display:flex;flex-direction:column;gap:6px}
-.buycard img{width:100%;max-width:170px;height:auto;margin:0 auto;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.buycard{border:1px solid var(--line);border-radius:16px;padding:16px;text-align:center;background:#fff;display:flex;flex-direction:column;gap:6px}
+.buycard img{width:100%;max-width:170px;height:auto;margin:0 auto 6px;border-radius:6px;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.buycard strong a{font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;text-decoration:none}
+.buycard .price{font-weight:700;color:var(--ink)}
 .buycard .btn{margin-top:auto}
 .stickybuy{display:none}
-@media (max-width:760px){
+.giftband{display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center;padding:26px 30px;border-radius:20px;color:#fff7e7;margin:56px 0;
+ background:radial-gradient(ellipse at 90% 0%,#7245aa99,transparent 60%),var(--deep)}
+.giftband .lights{display:flex;flex-direction:column;gap:5px}
+.giftband .lights span{width:12px;height:12px;border-radius:50%;box-shadow:0 0 10px currentColor}
+.giftband h2{color:#fff9eb;font-size:clamp(1.8rem,3vw,2.5rem);margin:0 0 6px}
+.giftband p{color:#d9d2e3;margin:0}
+.giftband .btn{background:var(--peach);border-color:var(--peach);color:var(--peach-ink)}
+
+/* ---------- Pie (idéntico a la portada) ---------- */
+footer{background:#f0eaf1;border-top:1px solid var(--line);padding:44px 20px;text-align:center;font-size:14px}
+.footer-signature{font-family:'Cormorant Garamond',Georgia,serif;font-size:38px;color:#59416b}
+.footer-motto{font-size:14px;margin:2px 0 18px}
+.footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 22px;margin-top:16px}
+.footer-links a{min-height:44px;display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600}
+.footer-links a:hover{text-decoration:underline;text-underline-offset:5px}
+.footer-social{display:flex;justify-content:center;gap:10px;margin:8px 0 4px}
+.footer-social a{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:#fff;border:1px solid var(--line)}
+.footer-social svg{width:19px;height:19px}
+
+/* ---------- Responsive ---------- */
+@media(max-width:1100px){.nav-links{gap:13px}.nav-social{display:none}}
+@media(max-width:900px){
+ .nav-inner{min-height:76px;flex-wrap:wrap;padding-block:12px}
+ .brand .brand-name{font-size:26px}.brand small{font-size:9px;letter-spacing:1px}
+ .js .menu-toggle{display:block}
+ .nav-links{flex-basis:100%;flex-wrap:wrap;gap:2px 18px}
+ .js .nav-links{display:none}
+ .js .nav-links.is-open{display:flex;flex-direction:column;align-items:flex-start;padding-bottom:10px}
+ .nav-social{display:flex}
+}
+@media(max-width:760px){
+ body{font-size:16px;padding-bottom:78px}
+ .hero,.columns{grid-template-columns:1fr;gap:28px}
+ .hero{padding:34px 22px;border-radius:18px;margin-inline:-6px}
+ .hero figure{max-width:360px;margin:0 auto}
+ .cards{grid-template-columns:1fr}
+ .panel{padding:22px}
+ main section{margin-bottom:48px}
+ .actions .btn{flex:1}
+ .card img{width:95px;height:95px}
+ .jump{margin-bottom:40px}
  .buybox{grid-template-columns:72px 1fr;gap:12px;padding:14px}.buybox img{width:72px}
- .buybox .actions{display:flex;flex-direction:column;gap:8px}.buybox .actions .btn{display:block;text-align:center;margin:0}
- .stickybuy{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:50;align-items:center;justify-content:space-between;gap:10px;
-  padding:10px 12px 10px 16px;border-radius:14px;background:#2f2340;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.25);font-size:.9rem}
- .stickybuy a{background:#f3cf8a;color:#2f2340;padding:9px 14px;border-radius:10px;font-weight:700;text-decoration:none;white-space:nowrap}
- body{padding-bottom:78px}
- header{position:static}
+ .buybox .actions{display:flex;flex-direction:column;gap:8px}.buybox .actions .btn{display:flex;margin:0}
+ .giftband{grid-template-columns:1fr;text-align:left;padding:24px}
+ .giftband .lights{flex-direction:row}
+ .stickybuy{display:flex;position:fixed;left:10px;right:10px;bottom:10px;z-index:50;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px 10px 16px;border-radius:14px;background:var(--deep);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.25);font-size:.9rem}
+ .stickybuy strong{color:#fff}
+ .stickybuy a{background:var(--peach);color:var(--peach-ink);padding:9px 14px;border-radius:8px;font-weight:700;text-decoration:none;white-space:nowrap}
+ .navbar{position:static}
 }
