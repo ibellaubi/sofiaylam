@@ -91,6 +91,7 @@
 <input type="hidden" name="_subject" value="Nueva suscripción: meditación Las siete luces">
 <input type="hidden" name="_next" value="https://ingridbellaubi.com/gracias.html">
 <input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
+<input type="hidden" name="_autoresponse" value="¡Hola! Gracias por apuntarte. Aquí tienes tu meditación cantada «Las siete luces que viven en mí» (en castellano y en catalán): https://ingridbellaubi.com/gracias.html — Escúchala con tu peque antes de dormir. Un abrazo, Ingrid Bellaubí">
 <input type="hidden" name="origen" value="home-regalo">
 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 <div class="optin-row"><label class="sr" for="nombre-home-regalo">Tu nombre</label><input id="nombre-home-regalo" name="nombre" type="text" placeholder="Tu nombre" autocomplete="given-name" required>
@@ -98,7 +99,12 @@
 <fieldset class="optin-lang"><legend>Idioma de la meditación</legend><label><input type="radio" name="idioma" value="castellano" checked> Castellano</label><label><input type="radio" name="idioma" value="catala"> Català</label><label><input type="radio" name="idioma" value="ambos"> Las dos</label></fieldset>
 <label class="optin-consent"><input type="checkbox" name="acepto_privacidad" value="si" required><span>Acepto recibir la meditación y emails de Ingrid Bellaubí con recursos y novedades de sus cuentos. Puedo darme de baja cuando quiera. <a href="/privacidad.html">Política de privacidad</a>.</span></label>
 <button class="btn btn-primary optin-btn" type="submit">Quiero la meditación gratis</button>
-</form><p class="optin-trust">Sin spam. Baja con un clic.</p></div>
+</form>
+<script>if(!window.__optin){window.__optin=1;document.addEventListener('submit',function(e){var f=e.target;if(!f.classList||!f.classList.contains('optin'))return;e.preventDefault();
+var b=f.querySelector('button[type=submit]');if(b){b.disabled=true;b.textContent='Enviando…'}
+var go=function(){location.href='/gracias.html'};var t=setTimeout(go,5000);
+try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'generate_lead',lead:'meditacion-siete-luces'})}catch(x){}
+fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)}).then(function(){clearTimeout(t);go()},function(){clearTimeout(t);go()})},true)}</script><p class="optin-trust">Sin spam. Baja con un clic.</p></div>
 </div></section>
 
 <section class="hw how-sec" aria-labelledby="t-how"><span class="kicker">Así funciona</span><h2 id="t-how">Tres pasos, diez minutos al día</h2>
@@ -179,6 +185,7 @@
 <input type="hidden" name="_subject" value="Nueva suscripción: meditación Las siete luces">
 <input type="hidden" name="_next" value="https://ingridbellaubi.com/gracias.html">
 <input type="hidden" name="_captcha" value="false"><input type="hidden" name="_template" value="table">
+<input type="hidden" name="_autoresponse" value="¡Hola! Gracias por apuntarte. Aquí tienes tu meditación cantada «Las siete luces que viven en mí» (en castellano y en catalán): https://ingridbellaubi.com/gracias.html — Escúchala con tu peque antes de dormir. Un abrazo, Ingrid Bellaubí">
 <input type="hidden" name="origen" value="home-final">
 <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 <div class="optin-row"><label class="sr" for="nombre-home-final">Tu nombre</label><input id="nombre-home-final" name="nombre" type="text" placeholder="Tu nombre" autocomplete="given-name" required>
@@ -186,7 +193,12 @@
 <fieldset class="optin-lang"><legend>Idioma de la meditación</legend><label><input type="radio" name="idioma" value="castellano" checked> Castellano</label><label><input type="radio" name="idioma" value="catala"> Català</label><label><input type="radio" name="idioma" value="ambos"> Las dos</label></fieldset>
 <label class="optin-consent"><input type="checkbox" name="acepto_privacidad" value="si" required><span>Acepto recibir la meditación y emails de Ingrid Bellaubí con recursos y novedades de sus cuentos. Puedo darme de baja cuando quiera. <a href="/privacidad.html">Política de privacidad</a>.</span></label>
 <button class="btn btn-primary optin-btn" type="submit">Enviarme la meditación</button>
-</form></div></div></section>
+</form>
+<script>if(!window.__optin){window.__optin=1;document.addEventListener('submit',function(e){var f=e.target;if(!f.classList||!f.classList.contains('optin'))return;e.preventDefault();
+var b=f.querySelector('button[type=submit]');if(b){b.disabled=true;b.textContent='Enviando…'}
+var go=function(){location.href='/gracias.html'};var t=setTimeout(go,5000);
+try{window.dataLayer=window.dataLayer||[];dataLayer.push({event:'generate_lead',lead:'meditacion-siete-luces'})}catch(x){}
+fetch(f.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)}).then(function(){clearTimeout(t);go()},function(){clearTimeout(t);go()})},true)}</script></div></div></section>
 </main>
 <div class="stickybuy home-sticky" role="complementary" aria-label="Compra rápida"><span><strong>4 cuentos</strong> · 14,99 €</span><a href="#cuentos">Elegir cuento</a></div>
 <footer><div class="footer-signature">Ingrid Bellaubí</div><p class="footer-motto">Leer juntos. Crecer por dentro.</p><div class="footer-social"><a href="https://www.youtube.com/@ingridbellaubi" target="_blank" rel="noopener noreferrer" aria-label="Canal de YouTube de Ingrid Bellaubí"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15.1V8.9L15.5 12z"/></svg></a><a href="https://open.spotify.com/artist/32qq9Q4l0PuhoMTSLLpoVl" target="_blank" rel="noopener noreferrer" aria-label="Ingrid Bellaubí en Spotify"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zm5 15.9a.7.7 0 0 1-1 .2c-2.7-1.6-6-2-10-1.1a.7.7 0 1 1-.3-1.4c4.3-1 8-.6 11 1.3.3.2.4.7.3 1zm1.4-3.1a.9.9 0 0 1-1.2.3c-3-1.9-7.7-2.4-11.3-1.3a.9.9 0 1 1-.5-1.7c4.1-1.2 9.2-.6 12.7 1.5.4.3.5.8.3 1.2zm.1-3.2C14.9 8.5 8.9 8.3 5.4 9.4a1 1 0 1 1-.6-2c4-1.2 10.6-1 14.7 1.5a1 1 0 0 1-1 1.7z"/></svg></a><a href="https://www.instagram.com/ingridbellaubi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Ingrid Bellaubí"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 3.9 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 4.9a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8zm0 8.1a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.1-9.4a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg></a></div><div class="footer-links"><a href="#cuentos">Libros</a><a href="/cuentos.html">Cuentos por emoción</a><a href="/gestion-emocional/">Gestión emocional</a><a href="/musica.html">Música y vídeos</a><a href="https://www.youtube.com/@ingridbellaubi" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://open.spotify.com/artist/32qq9Q4l0PuhoMTSLLpoVl" target="_blank" rel="noopener noreferrer">Spotify</a><a href="#regalo">Meditación gratis</a><a href="mailto:ingridbellaubi@gmail.com">Contacto</a><a href="/privacidad.html">Privacidad</a></div><p class="note" style="margin-top:14px">© 2026 Ingrid Bellaubí. Todos los derechos reservados.</p></footer>
