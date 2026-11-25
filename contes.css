@@ -20,7 +20,7 @@ strong{color:var(--ink)}
 /* ---------- Navegación (idéntica a la portada) ---------- */
 .navbar{position:sticky;top:0;z-index:20;background:#faf7f0f7;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
 .nav-inner{width:min(calc(100% - 40px),var(--container));margin-inline:auto;min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{display:flex;flex-direction:column;gap:2px;line-height:1.2;text-decoration:none;white-space:nowrap}
+.brand{display:flex;flex-direction:row;align-items:center;gap:10px;line-height:1.2;text-decoration:none;white-space:nowrap}.brand-logo{width:46px;height:46px;flex:none}.brand-txt{display:flex;flex-direction:column;gap:2px}
 .brand .brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:30px;color:#493556}
 .brand small{font:10px/1.6 Montserrat,sans-serif;letter-spacing:2px;color:#5c675e}
 .nav-links{display:flex;align-items:center;list-style:none;gap:18px;margin:0;padding:0}
@@ -128,7 +128,7 @@ footer{background:#f0eaf1;border-top:1px solid var(--line);padding:44px 20px;tex
 @media(max-width:1100px){.nav-links{gap:13px}.nav-social{display:none}}
 @media(max-width:900px){
  .nav-inner{min-height:76px;flex-wrap:wrap;padding-block:12px}
- .brand .brand-name{font-size:26px}.brand small{font-size:9px;letter-spacing:1px}
+ .brand .brand-name{font-size:26px}.brand-logo{width:38px;height:38px}.brand small{font-size:9px;letter-spacing:1px}
  .js .menu-toggle{display:block}
  .nav-links{flex-basis:100%;flex-wrap:wrap;gap:2px 18px}
  .js .nav-links{display:none}
@@ -155,3 +155,6 @@ footer{background:#f0eaf1;border-top:1px solid var(--line);padding:44px 20px;tex
  .stickybuy a{background:var(--peach);color:var(--peach-ink);padding:9px 14px;border-radius:8px;font-weight:700;text-decoration:none;white-space:nowrap}
  .navbar{position:static}
 }
+@media(max-width:1380px){.brand .brand-name{font-size:24px}.brand small{display:none}.brand-logo{width:40px;height:40px}.brand{gap:8px}}
+@media(min-width:901px) and (max-width:1300px){.nav-social{display:none!important}}
+@media(min-width:901px) and (max-width:1080px){.nav-links{gap:8px}.nav-links a{font-size:12.5px}.brand .brand-name{font-size:21px}.brand-logo{width:34px;height:34px}}
